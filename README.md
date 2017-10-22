@@ -1,57 +1,53 @@
 [<img src="https://img.shields.io/travis/playframework/play-scala-starter-example.svg"/>](https://travis-ci.org/playframework/play-scala-starter-example)
 
-# play-scala-starter-example
+# HTWG play-scala-seed
 
-This is a starter application that shows how Play works.  Please see the documentation at https://www.playframework.com/documentation/latest/Home for more details.
+This is a starter application using Play for the Lecture Web Technologies at HTWG.
+
+## Setup
+
+To set up your project follow these steps:
+* Fork this project on github
+* Rename the project on your github account (Settings > Repository name)
+* Load your forked project in IDEA (File > New > Project from  Version Controll > Github)
+* Go to build.sbt file, IDEA should offer to import the project structure from sbt. This will take several minutes. 
+* Continue only after import finished. That is the case when red fonds disappear. 
+* Go to a Scala file. IDEA should offer to connect to a Java VM and Scala SDK. 
+* Select Java 1.8
+* Select the same Scala SDK as your project from Software Engineering is running on, Scala 2.12.4 recommended.
+
+
+* Open the Project Structure (File > Project Structure)
+* Make sure the Project Structure > Libraries contains the Scala-sdk libraries in the correct version (2.12.4)
+* Make sure your module is not imported twice. If there are two (root, <your project>), delete <your project> and keep the root. 
+* Make sure in app > controllers you can create new Scala classes from the context menu.
 
 ## Running
 
-Run this using [sbt](http://www.scala-sbt.org/).  If you downloaded this project from http://www.playframework.com/download then you'll find a prepackaged version of sbt in the project directory:
+* In the IDEA Terminal type in sbt run. This will download play, the first time this also takes some time. 
 
 ```
 sbt run
 ```
 
-And then go to http://localhost:9000 to see the running web application.
+And then in your browser go to http://localhost:9000. 
+Now your project files are compiled, so this again takes some time the first time arround. 
+The default page is actually a very good introduction to play. Read it!
 
-There are several demonstration files available in this template.
+## First changes
 
-## Controllers
+Go to the view index.scala.html. Change it, so that the home page just shows "Hello World"
 
-- HomeController.scala:
+## Integrate your Game
 
-  Shows how to handle simple HTTP requests.
+To access your existing game from the Software Engineering class do the following
 
-- AsyncController.scala:
+* In the play project, add a lib folder at the top level.
+* Load your SE game project as a module (File > New > Module from existing Sources)
+* In the project structure, add an Artefact (File > Project Structure > Artefact), select JAR from Module, select your game.
+* Set the output folder for the artefact to the lib folder you just created
+* Generate the jar by (Build > Build Artefacts)
+* Import the jar into IDEA build path (File > Project Structure > Libraries > +)
+* Play automatically uses jars in the lib, but you need to restart the play server
 
-  Shows how to do asynchronous programming when handling a request.
-
-- CountController.scala:
-
-  Shows how to inject a component into a controller and use the component when
-  handling requests.
-
-## Components
-
-- Module.scala:
-
-  Shows how to use Guice to bind all the components needed by your application.
-
-- Counter.scala:
-
-  An example of a component that contains state, in this case a simple counter.
-
-- ApplicationTimer.scala:
-
-  An example of a component that starts when the application starts and stops
-  when the application stops.
-
-## Filters
-
-- Filters.scala:
-
-  Creates the list of HTTP filters used by your application.
-
-- ExampleFilter.scala
-
-  A simple filter that adds a header to every response.
+Now you should be able to access the classes of your game from your play Controller classes. 
