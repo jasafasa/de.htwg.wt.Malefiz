@@ -1,0 +1,61 @@
+@(controller:de.htwg.se.sudoku.controller.controllerComponent.ControllerInterface)
+
+@getBlockname(row:Int, column:Int) = @{
+    var blockname = ""
+    val blocksize = controller.gridSize
+    if (row % blocksize == 0) {blockname = "N"}
+    if (row % blocksize == 1) {blockname = ""}
+    if (row % blocksize == 2) {blockname = "S"}
+    if (column % blocksize == 0) {blockname = blockname + "W"}
+    if (column % blocksize == 1) {blockname = blockname + ""}
+    if (column % blocksize == 2) {blockname = blockname + "E"}
+    if (blockname == "") {blockname = "C"}
+    blockname + "block"
+}
+
+@getCellBorderId(row:Int, column:Int) = @{
+    var id:String = ""
+    if (controller.isGiven(row, column)) {
+        id="given"
+    } else {
+        if (controller.isHighlighted(row, column)) {
+            id="highlighted"
+        } else {
+            id="normal"
+        }
+    }
+    id
+}
+
+@main("HTWG Sudoku") {
+    <link rel="stylesheet" href='@routes.Assets.versioned("stylesheets/sudoku.css")' />
+    <script type='text/javascript' src='@routes.Assets.versioned("javascripts/sudoku.js")'></script>
+
+    <div class="game">
+        <div class="grid" id=size@{controller.gridSize}>
+        @for(row <- 0 until controller.gridSize){
+            @for(column <- 0 until controller.gridSize){
+                <div class="cellouter @{getBlockname(row, column)}" data-row="@row" data-column="@column">
+                    <div class="cellborder" id="@{getCellBorderId(row, column)}">
+                    @if(controller.cell(row,column).value != 0) {
+                        <div class="cell" id="cell@(row*10+column)">
+                            <div>@controller.cell(row,column).value</div>
+                        </div>} else {
+                        <div class="candidatecell" id="cell@(row*10+column)">
+                        @for( candidate <- 1 to controller.gridSize) {
+                            <div class="candidate" data-row="@row" data-column="@column" data-value="@candidate">
+                            @if( controller.isShowCandidates(row, column)) {@candidate} else {&nbsp;}
+                            </div>
+
+                        }
+                        </div>
+                    }
+
+                    </div>
+                </div>
+            }
+        }
+        </div>
+    </div>
+
+}

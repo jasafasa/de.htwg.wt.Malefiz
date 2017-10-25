@@ -12,11 +12,11 @@ class SudokuController @Inject()(cc: ControllerComponents) extends AbstractContr
   def tui =  gameController.gridToString + GameStatus.message(gameController.gameStatus)
 
   def sudoku = Action {
-    Ok(tui)
+    Ok(views.html.sudoku(gameController))
   }
 
   def newGrid = Action {
     gameController.createNewGrid
-    Ok(tui)
+    Ok(views.html.sudoku(gameController))
   }
 }
