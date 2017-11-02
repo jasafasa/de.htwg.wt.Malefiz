@@ -9,7 +9,11 @@ import de.htwg.se.sudoku.controller.controllerComponent.GameStatus
 @Singleton
 class SudokuController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
   val gameController = Sudoku.controller
-  def tui =  gameController.gridToString + GameStatus.message(gameController.gameStatus)
+  def sudokuAsText =  gameController.gridToString + GameStatus.message(gameController.gameStatus)
+
+  def sudoku2 = Action {
+    Ok(views.html.sudokuComponents(gameController))
+  }
 
   def sudoku = Action {
     Ok(views.html.sudoku(gameController))

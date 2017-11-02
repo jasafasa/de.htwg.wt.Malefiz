@@ -1,0 +1,86 @@
+.gamecontainer {
+    height: 100%;
+    width: 100%;
+    margin: 1em;
+    display:flex;
+    font-size:40px;
+    font-family: "Verdana",Geneva, sans-serif;
+    font-weight: bold;
+    color:black;
+}
+
+.game {
+    border-style: inset;
+    border-width: 0.05em;
+    border-spacing: 0px;
+    border-color: #f6f6FF;
+    background-color: black;
+    padding: 0.05em;
+    margin:auto;
+    width: auto;
+}
+
+.clear {
+    clear:both;
+}
+
+.house {
+    display: inline-block;
+    float: left;
+    background-color:#eeeeee;
+    padding: 0.05em;
+    margin:0.05em;
+}
+
+.size9 {
+    width: 4.5em;
+    height: 4.5em;
+}
+
+.size4 {
+    width: 3em;
+    height: 3em;
+}
+
+.size1 {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.cell {
+    display: inline-block;
+    float:left;
+    border-style: outset;
+    border-width: 0.05em;
+    background-color: #E0E0FF;
+    border-color: #f6f6FF;
+    width: 1.2em;
+    height: 1.2em;
+    margin:0.1em;
+    text-align: center;
+}
+.number {
+    display:inline-block; /* switch to none if candidates should show*/
+    width: 100%;
+    hight: 100%;
+}
+
+.normal {
+    background-color:#E0E0FF;
+}
+.given {
+    background-color:#C8C8FF;
+}
+.highlighted {
+    background-color:#C0FFC0;
+}
+
+.candidatecell {
+    display: inline-block; /* switch to inline-block if candidates should show*/
+    float:left;
+    font-size: 27.5%;
+    border-style: outset;
+    border-width: 0.125em;
+    width: 1.2em;
+    height: 1.2em;
+}
