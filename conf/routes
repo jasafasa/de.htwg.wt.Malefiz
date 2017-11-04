@@ -4,7 +4,6 @@
 
 # Controller for Sudoku
 GET     /                           controllers.SudokuController.sudoku
-GET     /2                          controllers.SudokuController.sudoku2
 GET     /new                        controllers.SudokuController.newGrid
 
 

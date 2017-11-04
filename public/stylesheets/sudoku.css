@@ -1,160 +1,86 @@
+.gamecontainer {
+    height: 100%;
+    width: 100%;
+    margin: 1em;
+    display:flex;
+    font-size:40px;
+    font-family: "Verdana",Geneva, sans-serif;
+    font-weight: bold;
+    color:black;
+}
 
-.align {
-    margin-left:auto;
-    margin-right:auto;
-    width:512px;
-}
-#normal {
-    background-color:#E0E0FF;
-}
-#given {
-    background-color:#C8C8FF;
-}
-#highlighted {
-    background-color:#C0FFC0;
-}
-.highlightbuttons {
-    font-size: 16px;
-}
-.highlightButtonGroup {
-    width: 440px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 4px;
-}
-.grid {
-    border-width:0px;
-    padding:0px;
-    background-color: #000000;
-    border-spacing: 0px;
-}
-#size9 {
-    margin:auto;
-    width:558px;
+.game {
     border-style: inset;
-    border-width: 2px;
+    border-width: 0.05em;
     border-spacing: 0px;
     border-color: #f6f6FF;
-}
-#size4 {
+    background-color: black;
+    padding: 0.05em;
     margin:auto;
-    width:231px;
-    border-style: inset;
-    border-width: 2px;
-    border-spacing: 0px;
-    border-color: #f6f6FF;
+    width: auto;
 }
-#size1 {
-    margin:auto;
-    width:62px;
-    float:left;
-    border-style: inset;
-    border-width: 2px;
-    border-spacing: 0px;
-    border-color: #f6f6FF;
+
+.clear {
+    clear:both;
 }
-.cellouter {
+
+.house {
     display: inline-block;
-    background-color:#E0E0FF;
-    padding: 1px;
+    float: left;
+    background-color:#eeeeee;
+    padding: 0.05em;
+    margin:0.05em;
 }
-.cellborder {
-    display: inline-block;
-    border-style: outset;
-    border-width: 2px;
-    background-color: #E0E0FF;
-    border-color: #f6f6FF;
+
+.size9 {
+    width: 4.5em;
+    height: 4.5em;
 }
+
+.size4 {
+    width: 3em;
+    height: 3em;
+}
+
+.size1 {
+    width: 1.5em;
+    height: 1.5em;
+}
+
 .cell {
     display: inline-block;
-    width: 52px;
-    height: 52px;
+    float:left;
+    border-style: outset;
+    border-width: 0.05em;
+    background-color: #E0E0FF;
+    border-color: #f6f6FF;
+    width: 1.2em;
+    height: 1.2em;
+    margin:0.1em;
     text-align: center;
-    line-height: 56px;
-    font-size:40px;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    position:relative;
-    bottom:2px;
 }
+.number {
+    display:inline-block; /* switch to none if candidates should show*/
+    width: 100%;
+    hight: 100%;
+}
+
+.normal {
+    background-color:#E0E0FF;
+}
+.given {
+    background-color:#C8C8FF;
+}
+.highlighted {
+    background-color:#C0FFC0;
+}
+
 .candidatecell {
-    display: inline-block;
-    width: 52px;
-    height: 52px;
-    text-align: center;
-    font-size:11px;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    position:relative;
-}
-.candidate {
-    display: inline-block;
-    width: 15px;
-    height: 16px;
-    font-size:11px;
-}
-div.statusline {
-    font-size: 16px;
-    text-align: center;
-}
-.NWblock {
-    display: inline-block;
-    margin-top: 1px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 1px;
-}
-.Nblock {
-    display: inline-block;
-    margin-top: 1px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-}
-.NEblock {
-    display: inline-block;
-    margin-top: 1px;
-    margin-right: 1px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-}
-.Wblock {
-    display: inline-block;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 1px;
-}
-.Cblock {
-    display: inline-block;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-}
-.Eblock {
-    display: inline-block;
-    margin-top: 0px;
-    margin-right: 1px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-}
-.SWblock {
-    display: inline-block;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 1px;
-    margin-left: 1px;
-}
-.Sblock {
-    display: inline-block;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 1px;
-    margin-left: 0px;
-}
-.SEblock {
-    display: inline-block;
-    margin-top: 0px;
-    margin-right: 1px;
-    margin-bottom: 1px;
-    margin-left: 0px;
+    display: inline-block; /* switch to inline-block if candidates should show*/
+    float:left;
+    font-size: 27.5%;
+    border-style: outset;
+    border-width: 0.125em;
+    width: 1.2em;
+    height: 1.2em;
 }
