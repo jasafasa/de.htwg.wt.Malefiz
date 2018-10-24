@@ -3,8 +3,8 @@
 # ~~~~
 
 # Controller for Sudoku
-GET     /                           controllers.SudokuController.sudoku
-GET     /new                        controllers.SudokuController.newGrid
+GET     /                           controllers.MalefizController.malefiz
+#GET     /new                        controllers.MalefizController.newGame
 
 
 # Map static resources from the /public folder to the /assets URL path
