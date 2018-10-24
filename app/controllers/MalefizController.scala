@@ -15,8 +15,7 @@ class MalefizController @Inject()(cc: ControllerComponents) extends AbstractCont
     Ok(views.html.malefiz(malefizAsText))
   }
 
- /* def newGame = Action {
-    controller.newGame(4)
-    Ok()
-  } */
+  def info = Action {
+    Ok(views.html.info())
+  }
 }

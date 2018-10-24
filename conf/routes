@@ -4,6 +4,7 @@
 
 # Controller for Sudoku
 GET     /                           controllers.MalefizController.malefiz
+GET     /info                       controllers.MalefizController.info
 #GET     /new                        controllers.MalefizController.newGame
 
 
