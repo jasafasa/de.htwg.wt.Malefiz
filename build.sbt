@@ -1,5 +1,5 @@
 
-name := """HTWG-play-scala-seed"""
+name := """Malefiz Web"""
 
 version := "1.0-SNAPSHOT"
 
