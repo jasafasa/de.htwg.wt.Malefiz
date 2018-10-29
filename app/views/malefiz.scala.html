@@ -1,8 +1,42 @@
-@(malefiz:String)
-
-
+@(currentGB: String)
 
 @main("HTWG Malefiz") {
-<p>Welcome</p>
-    @malefiz
+    <div class="game">
+        <div class="board">
+        @for(c <- currentGB) {
+            @if(c.equals('\n')) {
+                <br>
+            }
+            @if(c.equals('-')) {
+                <div class="field">-</div>
+            }
+            @if(c.equals('o')) {
+                <div class="field">o</div>
+            }
+            @if(c.equals('1')) {
+                <div class="field">1</div>
+            }
+            @if(c.equals('2')) {
+                <div class="field">2</div>
+            }
+            @if(c.equals('3')) {
+                <div class="field">3</div>
+            }
+            @if(c.equals('4')) {
+                <div class="field">4</div>
+            }
+            @if(c.equals('x')) {
+                <div class="field">x</div>
+            }
+            @if(c.equals('P')) {
+                <div class="field">P</div>
+            }
+            @if(c.equals('B')) {
+                <div class="field">B</div>
+            }
+
+        }
+
+        </div>
+    </div>
 }

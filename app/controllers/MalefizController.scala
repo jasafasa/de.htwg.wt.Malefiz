@@ -9,7 +9,7 @@ import de.htwg.se.malefiz.Malefiz
 @Singleton
 class MalefizController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
 
-  def malefizAsText =  Malefiz.controller.gameBoard.toString
+  def malefizAsText =  Malefiz.controller.gameBoard.toString.replaceAll("( ?[0-9]+ )|(16)","")
 
   def malefiz = Action {
     Ok(views.html.malefiz(malefizAsText))
