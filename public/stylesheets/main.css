@@ -1,34 +1,60 @@
 .game {
     height: 100%;
     width: 100%;
-    margin: 1em;
-    display:flex;
-    font-size:20px;
-    font-family: "Verdana",Geneva, sans-serif;
-    font-weight: bold;
-    color:black;
 }
 
 .board {
+    background-color: orange;
+    border-color: black;
     border-style: solid;
-    border-width: 0.05em;
-    border-spacing: 0px;
-    border-color: #f6f6FF;
-    /*background-color: orange;*/
-    /*padding: 0.05em;*/
-    /*margin:auto;*/
-    /*width: auto;*/
+    border-width: medium;
+    margin: 2%;
+    padding: 1%;
+    float: left;
 }
 
 .field {
+    width: 2em;
+    height: 2em;
     display: inline-block;
-    /*float:left;*/
-    /*border-radius: 25px;*/
-    /*border-width: 0.05em;*/
-    /*background-color: #E0E0FF;*/
-    /*border-color: #f6f6FF;*/
-    width: 1.2em;
-    /*height: 1.2em;*/
-    /*margin:0.1em;*/
-    text-align: center;
+}
+
+.game-field {
+    background: black;
+    border-radius: 50%;
+}
+
+.marked-field {
+    background: darkmagenta;
+}
+
+.stone {
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+}
+
+.block-stone {
+    background: white;
+}
+
+.hitplayer-stone {
+    background: hotpink;
+}
+
+.p1-stone {
+    background: red;
+}
+
+.p2-stone {
+    background: green;
+}
+
+.p3-stone {
+    background: yellow;
+}
+
+.p4-stone {
+    background: blue;
 }
