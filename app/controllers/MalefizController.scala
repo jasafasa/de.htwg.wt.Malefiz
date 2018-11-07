@@ -11,53 +11,61 @@ import de.htwg.se.malefiz.controller.State
 class MalefizController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
 
   //parse TUI String
-  val malefizAsText = Malefiz.controller.gameBoard.toString.replaceAll("( ?[0-9]+ )|(16)", "").replace(" ", "#").replace("###", " ").dropRight(1)
-
+  def boardString: String = Malefiz.controller.gameBoard.toString.replaceAll("( ?[0-9]+ )|(16)", "").replace(" ", "#").replace("###", " ").dropRight(1)
 
   //parse player Color
-  val activePlayerColorInt = Malefiz.controller.activePlayer.color
+  def activePlayerColorString : String = {
+    val activePlayerColorInt = Malefiz.controller.activePlayer.color
 
-  var activePlayerColorString = ""
+    var activePlayerColorString = ""
 
-  if (activePlayerColorInt == 1) {
-    activePlayerColorString = "Red"
-  } else if (activePlayerColorInt == 2) {
-    activePlayerColorString = "Green"
-  } else if (activePlayerColorInt == 3) {
-    activePlayerColorString = "Yellow"
-  } else {
-    activePlayerColorString = "Blue"
+
+    if (activePlayerColorInt == 1) {
+      activePlayerColorString = "Red"
+    } else if (activePlayerColorInt == 2) {
+      activePlayerColorString = "Green"
+    } else if (activePlayerColorInt == 3) {
+      activePlayerColorString = "Yellow"
+    } else {
+      activePlayerColorString = "Blue"
+    }
+
+    activePlayerColorString
   }
 
-
   //get diced
-  val diced = Malefiz.controller.diced.toString
+  def diced : String = Malefiz.controller.diced.toString
 
 
   //parse game state message
-  var message = "n.a."
+  def message : String = {
+    Malefiz.controller.state match {
+      case State.SetBlockStone =>
+        "Set a BlockStone"
 
-  Malefiz.controller.state match {
-    case State.SetBlockStone =>
-      message = "Set a BlockStone"
+      case State.ChoosePlayerStone =>
+        "Chose one of your Stones"
 
-    case State.ChoosePlayerStone =>
-      message = "Chose one of your Stones"
+      case State.ChooseTarget =>
+        "Chose a Target Field"
 
-    case State.ChooseTarget =>
-      message = "Chose a Target Field"
+      case State.BeforeEndOfTurn =>
+        "Press Enter to end your turn or Backspace to undo"
 
-    case State.BeforeEndOfTurn =>
-      message = "Press Enter to end your turn or Backspace to undo"
-
-    case _ => message = "next turn"
+      case _ => "next turn"
+    }
   }
 
   def malefiz = Action {
-    Ok(views.html.malefiz(malefizAsText, activePlayerColorString, diced, message))
+    Ok(views.html.malefiz(boardString, activePlayerColorString, diced, message))
   }
 
   def info = Action {
     Ok(views.html.info())
+  }
+
+  def newGame(n: Int) = Action {
+      Malefiz.controller.newGame(n)
+      Ok(views.html.malefiz(boardString, activePlayerColorString, diced, message))
   }
 }

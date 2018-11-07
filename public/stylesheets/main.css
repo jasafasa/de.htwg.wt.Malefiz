@@ -5,9 +5,7 @@
 
 .board {
     background-color: orange;
-    border-color: black;
-    border-style: solid;
-    border-width: medium;
+    border: medium solid black;
     margin: 2%;
     padding: 1%;
     float: left;
