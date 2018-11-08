@@ -68,4 +68,24 @@ class MalefizController @Inject()(cc: ControllerComponents) extends AbstractCont
       Malefiz.controller.newGame(n)
       Ok(views.html.malefiz(boardString, activePlayerColorString, diced, message))
   }
+
+  def takeInput(x: Int, y: Int) = Action {
+    Malefiz.controller.takeInput(x,y)
+    Ok(views.html.malefiz(boardString, activePlayerColorString, diced, message))
+  }
+
+  def endTurn() = Action {
+    Malefiz.controller.endTurn()
+    Ok(views.html.malefiz(boardString, activePlayerColorString, diced, message))
+  }
+
+  def undo() = Action {
+    Malefiz.controller.undo()
+    Ok(views.html.malefiz(boardString, activePlayerColorString, diced, message))
+  }
+
+  def redo() = Action {
+    Malefiz.controller.redo()
+    Ok(views.html.malefiz(boardString, activePlayerColorString, diced, message))
+  }
 }

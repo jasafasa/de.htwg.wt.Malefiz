@@ -3,10 +3,14 @@
 # ~~~~
 
 # Controller for Malefiz
-GET     /                           controllers.MalefizController.malefiz
-GET     /info                       controllers.MalefizController.info
-GET     /new/$n<[2-4]>             controllers.MalefizController.newGame(n: Int)
+GET        /                     controllers.MalefizController.malefiz
+GET        /info                 controllers.MalefizController.info
+GET        /new/$n<[2-4]>        controllers.MalefizController.newGame(n: Int)
+GET        /touch/:x/:y          controllers.MalefizController.takeInput(x: Int, y: Int)
+GET        /turn                 controllers.MalefizController.endTurn()
+GET        /undo                 controllers.MalefizController.undo()
+GET        /redo                 controllers.MalefizController.redo()
 
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET        /assets/*file         controllers.Assets.versioned(path="/public", file: Asset)
