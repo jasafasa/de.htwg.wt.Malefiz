@@ -21,10 +21,25 @@
                 @if(c.equals('x')) {
                     <div class="field game-field marked-field"></div>
                 }
-                @if(c.equals('P')) {
+                @if(c.equals('G')) {
                     <div class="field game-field marked-field">
-                        <div class="stone hitplayer-stone"></div>
+                        <div class="stone p1-stone"></div>
                     </div>
+                }
+                @if(c.equals('H')) {
+                <div class="field game-field marked-field">
+                    <div class="stone p2-stone"></div>
+                </div>
+                }
+                @if(c.equals('J')) {
+                <div class="field game-field marked-field">
+                    <div class="stone p3-stone"></div>
+                </div>
+                }
+                @if(c.equals('K')) {
+                <div class="field game-field marked-field">
+                    <div class="stone p4-stone"></div>
+                </div>
                 }
                 @if(c.equals('B')) {
                     <div class="field game-field marked-field">
