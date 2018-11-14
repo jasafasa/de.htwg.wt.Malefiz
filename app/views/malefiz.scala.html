@@ -1,6 +1,7 @@
 @(currentGB: String, activePlayer: String, diced: String, message: String)
-
+    @import java.math.BigInteger; var x=0; var y=0
     @main("HTWG Malefiz") {
+
         <div class="game">
             @*TODO: Make this look good.*@
             <div>Player: @activePlayer Diced: @diced @message</div>
@@ -11,65 +12,80 @@
 
                 @if(c.equals('\n')) {
                     <br>
+                    @(y=y+1)
+                    @(x=0)
                 }
                 @if(c.equals(' ')) {
-                    <div class="field"></div>
+                    <div class="field" x=@x y=@y></div>
+                    @(x=x+1)
                 }
                 @if(c.equals('o')) {
-                    <div class="field game-field"></div>
+                    <div class="field game-field" x=@x y=@y></div>
+                    @(x=x+1)
                 }
                 @if(c.equals('x')) {
-                    <div class="field game-field marked-field"></div>
+                    <div class="field game-field marked-field"x=@x y=@y></div>
+                    @(x=x+1)
                 }
                 @if(c.equals('G')) {
-                    <div class="field game-field marked-field">
+                    <div class="field game-field marked-field" x=@x y=@y>
                         <div class="stone p1-stone"></div>
                     </div>
+                    @(x=x+1)
                 }
                 @if(c.equals('H')) {
-                <div class="field game-field marked-field">
+                <div class="field game-field marked-field" x=@x y=@y>
                     <div class="stone p2-stone"></div>
                 </div>
+                    @(x=x+1)
                 }
                 @if(c.equals('J')) {
-                <div class="field game-field marked-field">
+                <div class="field game-field marked-field" x=@x y=@y>
                     <div class="stone p3-stone"></div>
                 </div>
+                    @(x=x+1)
                 }
                 @if(c.equals('K')) {
-                <div class="field game-field marked-field">
+                <div class="field game-field marked-field" x=@x y=@y>
                     <div class="stone p4-stone"></div>
                 </div>
+                    @(x=x+1)
                 }
                 @if(c.equals('B')) {
-                    <div class="field game-field marked-field">
+                    <div class="field game-field marked-field" x=@x y=@y>
                         <div class="stone block-stone"></div>
                     </div>
+                    @(x=x+1)
                 }
                 @if(c.equals('-')) {
-                    <div class="field game-field">
+                    <div class="field game-field" x=@x y=@y>
                         <div class="stone block-stone"></div>
                     </div>
+                    @(x=x+1)
                 }
                 @if(c.equals('1')) {
-                    <div class="field game-field">
+                    <div class="field game-field" x=@x y=@y>
                         <div class="stone p1-stone"></div>
                     </div>
+                    @(x=x+1)
                 }
                 @if(c.equals('2')) {
-                    <div class="field game-field">
+                    <div class="field game-field" x=@x y=@y>
                         <div class="stone p2-stone"></div>
                     </div>
+                    @(x=x+1)
                 }
                 @if(c.equals('3')) {
-                    <div class="field game-field">
+                    <div class="field game-field" x=@x y=@y>
                         <div class="stone p3-stone"></div>
                     </div>
+                    @(x=x+1)
                 }
                 @if(c.equals('4')) {
-                    <div class="field game-field">
+                    <div class="field game-field" x=@x y=@y>
                         <div class="stone p4-stone"></div>
                     </div>
+                    @(x=x+1)
                 }
             }
             </div>
