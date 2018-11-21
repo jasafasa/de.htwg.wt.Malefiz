@@ -1,14 +1,14 @@
 package controllers
 
 import javax.inject._
-
 import play.api.mvc._
-
 import de.htwg.se.malefiz.Malefiz
 import de.htwg.se.malefiz.controller.State
 
 @Singleton
 class MalefizController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
+
+  new de.htwg.se.malefiz.aview.GUI(Malefiz.controller)
 
   //parse TUI String
   def boardString: String = Malefiz.controller.gameBoard.toString.replaceAll("( ?[0-9]+ )|(16)", "").replace(" ", "#").replace("###", " ").dropRight(1)
