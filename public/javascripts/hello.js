@@ -2,18 +2,39 @@ $(document).ready(function () {
     console.log("document ready")
 });
 
-$(document).click(function(event) {
+$(document).click(function (event) {
     var target = $(event.target)
 
-    //quit if something else than stone is clicked
-    if (!target.hasClass("stone"))
-        return
+    if (target.hasClass("stone")) {
 
-    target = target.parent()
+        target = target.parent()
 
-    var x = target.attr("x")
-    var y = target.attr("y")
+        var x = target.attr("x")
+        var y = target.attr("y")
 
-    console.log(x + "  " + y)
+        console.log(x + "  " + y)
 
+        $.ajax(
+            {
+                type: 'GET',
+                url: "touch/" + x + "/" + y,
+            }
+        )
+    }
+
+    if (target.hasClass("marked-field")) {
+
+        var x = target.attr("x")
+        var y = target.attr("y")
+
+        console.log(x + "  " + y)
+
+        $.ajax(
+            {
+                type: 'GET',
+                url: "touch/" + x + "/" + y,
+            }
+        )
+    }
 });
+
