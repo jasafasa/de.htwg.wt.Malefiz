@@ -6,9 +6,12 @@
             @*TODO: Make this look good.*@
             <div>Player: @activePlayer Diced: @diced @message</div>
 
-            <input type="text" id="amount" value="1"  size="100">
+            <button id="newButton" type="button" value="button" class="btn btn-primary">new</button>
+            <button id="undoButton" type="button" value="button" class="btn btn-primary">undo</button>
+            <button id="redoButton" type="button" value="button" class="btn btn-primary">redo</button>
+            <button id="nextButton" type="button" value="button" class="btn btn-primary">next</button>
 
-            <div class="board">
+            <div id="board" class="board">
 
             @for(c <- currentGB) {
 
