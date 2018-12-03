@@ -61,7 +61,7 @@ $(document).click(function (event) {
         )
     }
 
-    if (target.hasClass("marked-field")) {
+    if (target.hasClass("game-field")) {
 
         var x = target.attr("x")
         var y = target.attr("y")
