@@ -33,7 +33,7 @@ class MalefizController @Inject()(cc: ControllerComponents) extends AbstractCont
         "Chose a Target Field"
 
       case State.BeforeEndOfTurn =>
-        "Press Enter to end your turn or Backspace to undo"
+        "Press N to end your turn or U to undo"
 
       case _ => "next turn"
     }

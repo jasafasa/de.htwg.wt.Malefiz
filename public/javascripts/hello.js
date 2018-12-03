@@ -5,7 +5,7 @@ $(document).ready(function () {
         $.ajax(
             {
                 type: 'GET',
-                url: "new/2",
+                url: "new/" + $('#newGamePlayerCount').val(),
             }
         )
     });
@@ -39,6 +39,38 @@ $(document).ready(function () {
             }
         )
     });
+});
+
+$(document).keypress(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    console.log(keycode)
+    if(keycode == '110'){
+        console.log("next")
+        $.ajax(
+            {
+                type: 'GET',
+                url: "turn",
+            }
+        )
+    }
+    if(keycode == '117'){
+        console.log("undo")
+        $.ajax(
+            {
+                type: 'GET',
+                url: "undo",
+            }
+        )
+    }
+    if(keycode == '114'){
+        console.log("redo")
+        $.ajax(
+            {
+                type: 'GET',
+                url: "redo",
+            }
+        )
+    }
 });
 
 $(document).click(function (event) {
