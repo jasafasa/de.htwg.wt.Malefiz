@@ -14,24 +14,7 @@ class MalefizController @Inject()(cc: ControllerComponents) extends AbstractCont
   def boardString: String = Malefiz.controller.gameBoard.toString.replaceAll("( ?[0-9]+ )|(16)", "").replace(" ", "#").replace("###", " ").dropRight(1)
 
   //parse player Color
-  def activePlayerColorString : String = {
-    val activePlayerColorInt = Malefiz.controller.activePlayer.color
-
-    var activePlayerColorString = ""
-
-
-    if (activePlayerColorInt == 1) {
-      activePlayerColorString = "Red"
-    } else if (activePlayerColorInt == 2) {
-      activePlayerColorString = "Green"
-    } else if (activePlayerColorInt == 3) {
-      activePlayerColorString = "Yellow"
-    } else {
-      activePlayerColorString = "Blue"
-    }
-
-    activePlayerColorString
-  }
+  def activePlayerColorString : String = Malefiz.controller.activePlayer.color.toString()
 
   //get diced
   def diced : String = Malefiz.controller.diced.toString

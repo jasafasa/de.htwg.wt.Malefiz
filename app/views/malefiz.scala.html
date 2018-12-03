@@ -1,98 +1,121 @@
 @(currentGB: String, activePlayer: String, diced: String, message: String)
-    @import java.math.BigInteger; var x=0; var y=0
-    @main("HTWG Malefiz") {
+@import java.math.BigInteger; var x = 0; var y = 0
 
-        <div class="game">
-            @*TODO: Make this look good.*@
-            <div>Player: @activePlayer Diced: @diced @message</div>
+@main("HTWG Malefiz") {
 
-            <button id="newButton" type="button" value="button" class="btn btn-primary">new</button>
-            <button id="undoButton" type="button" value="button" class="btn btn-primary">undo</button>
-            <button id="redoButton" type="button" value="button" class="btn btn-primary">redo</button>
-            <button id="nextButton" type="button" value="button" class="btn btn-primary">next</button>
-
-            <div id="board" class="board">
-
-            @for(c <- currentGB) {
-
-                @if(c.equals('\n')) {
-                    <br>
-                    @(y=y+1)
-                    @(x=0)
-                }
-                @if(c.equals(' ')) {
-                    <div class="field" x=@x y=@y></div>
-                    @(x=x+1)
-                }
-                @if(c.equals('o')) {
-                    <div class="field game-field" x=@x y=@y></div>
-                    @(x=x+1)
-                }
-                @if(c.equals('x')) {
-                    <div class="field game-field marked-field"x=@x y=@y></div>
-                    @(x=x+1)
-                }
-                @if(c.equals('G')) {
-                    <div class="field game-field marked-field" x=@x y=@y>
-                        <div class="stone p1-stone"></div>
+    <div class="game">
+        <nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
+            <a class="navbar-brand" href="/">Malefiz</a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Edit
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <button id="newButton" type="button" value="button" class="dropdown-item">New</button>
+                        <button id="undoButton" type="button" value="button" class="dropdown-item">undo</button>
+                        <button id="redoButton" type="button" value="button" class="dropdown-item">redo</button>
+                        <button id="nextButton" type="button" value="button" class="dropdown-item">next</button>
                     </div>
-                    @(x=x+1)
-                }
-                @if(c.equals('H')) {
+                </li>
+            </ul>
+            <a class="navbar-brand" href="#">@message   </a>
+            <a class="navbar-brand" href="#">
+                Player:
+                <img src="@routes.Assets.versioned("images/player" + activePlayer + ".png")" width="30" height="30" class="d-inline-block align-top" alt="">
+            </a>
+            <a class="navbar-brand" href="#">
+                Diced:
+                <img src="@routes.Assets.versioned("images/dice" + diced + ".png")" width="30" height="30" class="d-inline-block align-top" alt="">
+            </a>
+        </nav>
+
+
+        <div id="board" class="board">
+
+        @for(c <- currentGB) {
+
+            @if(c.equals('\n')) {
+                <br>
+                @(y = y + 1)
+                @(x = 0)
+            }
+            @if(c.equals(' ')) {
+                <div class="field" x=@x y=@y></div>
+                @(x = x + 1)
+            }
+            @if(c.equals('o')) {
+                <div class="field game-field" x=@x y=@y></div>
+                @(x = x + 1)
+            }
+            @if(c.equals('x')) {
+                <div class="field game-field marked-field" x=@x y=@y></div>
+                @(x = x + 1)
+            }
+            @if(c.equals('G')) {
+                <div class="field game-field marked-field" x=@x y=@y>
+                    <div class="stone p1-stone"></div>
+                </div>
+                @(x = x + 1)
+            }
+            @if(c.equals('H')) {
                 <div class="field game-field marked-field" x=@x y=@y>
                     <div class="stone p2-stone"></div>
                 </div>
-                    @(x=x+1)
-                }
-                @if(c.equals('J')) {
+                @(x = x + 1)
+            }
+            @if(c.equals('J')) {
                 <div class="field game-field marked-field" x=@x y=@y>
                     <div class="stone p3-stone"></div>
                 </div>
-                    @(x=x+1)
-                }
-                @if(c.equals('K')) {
+                @(x = x + 1)
+            }
+            @if(c.equals('K')) {
                 <div class="field game-field marked-field" x=@x y=@y>
                     <div class="stone p4-stone"></div>
                 </div>
-                    @(x=x+1)
-                }
-                @if(c.equals('B')) {
-                    <div class="field game-field marked-field" x=@x y=@y>
-                        <div class="stone block-stone"></div>
-                    </div>
-                    @(x=x+1)
-                }
-                @if(c.equals('-')) {
-                    <div class="field game-field" x=@x y=@y>
-                        <div class="stone block-stone"></div>
-                    </div>
-                    @(x=x+1)
-                }
-                @if(c.equals('1')) {
-                    <div class="field game-field" x=@x y=@y>
-                        <div class="stone p1-stone"></div>
-                    </div>
-                    @(x=x+1)
-                }
-                @if(c.equals('2')) {
-                    <div class="field game-field" x=@x y=@y>
-                        <div class="stone p2-stone"></div>
-                    </div>
-                    @(x=x+1)
-                }
-                @if(c.equals('3')) {
-                    <div class="field game-field" x=@x y=@y>
-                        <div class="stone p3-stone"></div>
-                    </div>
-                    @(x=x+1)
-                }
-                @if(c.equals('4')) {
-                    <div class="field game-field" x=@x y=@y>
-                        <div class="stone p4-stone"></div>
-                    </div>
-                    @(x=x+1)
-                }
+                @(x = x + 1)
             }
-            </div>
+            @if(c.equals('B')) {
+                <div class="field game-field marked-field" x=@x y=@y>
+                    <div class="stone block-stone"></div>
+                </div>
+                @(x = x + 1)
+            }
+            @if(c.equals('-')) {
+                <div class="field game-field" x=@x y=@y>
+                    <div class="stone block-stone"></div>
+                </div>
+                @(x = x + 1)
+            }
+            @if(c.equals('1')) {
+                <div class="field game-field" x=@x y=@y>
+                    <div class="stone p1-stone"></div>
+                </div>
+                @(x = x + 1)
+            }
+            @if(c.equals('2')) {
+                <div class="field game-field" x=@x y=@y>
+                    <div class="stone p2-stone"></div>
+                </div>
+                @(x = x + 1)
+            }
+            @if(c.equals('3')) {
+                <div class="field game-field" x=@x y=@y>
+                    <div class="stone p3-stone"></div>
+                </div>
+                @(x = x + 1)
+            }
+            @if(c.equals('4')) {
+                <div class="field game-field" x=@x y=@y>
+                    <div class="stone p4-stone"></div>
+                </div>
+                @(x = x + 1)
+            }
+        }
         </div>
-    }
+    </div>
+}
