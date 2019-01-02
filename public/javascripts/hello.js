@@ -4,6 +4,10 @@ function undo() {
         {
             type: 'GET',
             url: "undo",
+
+            success: function (result) {
+                updateGame()
+            }
         }
     )
 }
@@ -14,6 +18,10 @@ function redo() {
         {
             type: 'GET',
             url: "redo",
+
+            success: function (result) {
+                updateGame()
+            }
         }
     )
 }
@@ -24,6 +32,10 @@ function nextTurn() {
         {
             type: 'GET',
             url: "turn",
+
+            success: function (result) {
+                updateGame()
+            }
         }
     )
 }
@@ -50,6 +62,27 @@ function addButtons() {
     $('#nextButton').click(function () {
         nextTurn()
     });
+}
+
+function updateGame() {
+    $.ajax(
+        {
+            type: 'GET',
+            url: "gameJson",
+
+            success: function (result) {
+
+                Object.entries(result.fields).forEach(
+                    ([key, value]) => {
+                        console.log(value)
+                        if(!value.isFreeSpace) {
+                            $('.game-field').addClass('marked-field')
+                        }
+                    }
+            );
+            }
+        }
+    )
 }
 
 $(document).keypress(function (event) {
@@ -82,6 +115,10 @@ $(document).click(function (event) {
             {
                 type: 'GET',
                 url: "touch/" + x + "/" + y,
+
+                success: function () {
+                    updateGame()
+                }
             }
         )
     }
@@ -97,6 +134,10 @@ $(document).click(function (event) {
             {
                 type: 'GET',
                 url: "touch/" + x + "/" + y,
+
+                success: function (result) {
+                    updateGame()
+                }
             }
         )
     }
