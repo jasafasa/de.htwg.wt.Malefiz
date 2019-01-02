@@ -1,5 +1,34 @@
-$(document).ready(function () {
-    console.log("document ready")
+function undo() {
+    console.log("undo")
+    $.ajax(
+        {
+            type: 'GET',
+            url: "undo",
+        }
+    )
+}
+
+function redo() {
+    console.log("redo")
+    $.ajax(
+        {
+            type: 'GET',
+            url: "redo",
+        }
+    )
+}
+
+function nextTurn() {
+    console.log("next")
+    $.ajax(
+        {
+            type: 'GET',
+            url: "turn",
+        }
+    )
+}
+
+function addButtons() {
     $('#newButton').click(function () {
         console.log("newgame 2")
         $.ajax(
@@ -11,65 +40,29 @@ $(document).ready(function () {
     });
 
     $('#undoButton').click(function () {
-        console.log("undo")
-        $.ajax(
-            {
-                type: 'GET',
-                url: "undo",
-            }
-        )
+        undo()
     });
 
     $('#redoButton').click(function () {
-        console.log("redo")
-        $.ajax(
-            {
-                type: 'GET',
-                url: "redo",
-            }
-        )
+        redo()
     });
 
     $('#nextButton').click(function () {
-        console.log("next")
-        $.ajax(
-            {
-                type: 'GET',
-                url: "turn",
-            }
-        )
+        nextTurn()
     });
-});
+}
 
-$(document).keypress(function(event){
+$(document).keypress(function (event) {
     var keycode = (event.keyCode ? event.keyCode : event.which);
     console.log(keycode)
-    if(keycode == '110'){
-        console.log("next")
-        $.ajax(
-            {
-                type: 'GET',
-                url: "turn",
-            }
-        )
+    if (keycode == '110') {
+        nextTurn()
     }
-    if(keycode == '117'){
-        console.log("undo")
-        $.ajax(
-            {
-                type: 'GET',
-                url: "undo",
-            }
-        )
+    if (keycode == '117') {
+        undo()
     }
-    if(keycode == '114'){
-        console.log("redo")
-        $.ajax(
-            {
-                type: 'GET',
-                url: "redo",
-            }
-        )
+    if (keycode == '114') {
+        redo()
     }
 });
 
@@ -107,4 +100,9 @@ $(document).click(function (event) {
             }
         )
     }
+});
+
+$(document).ready(function () {
+    addButtons()
+    console.log("document ready")
 });
