@@ -26,14 +26,14 @@
                 </form>
             </li>
         </ul>
-        <a class="navbar-brand" href="#">@message   </a>
+        <a id="state-message" class="navbar-brand" href="#">@message   </a>
         <a class="navbar-brand" href="#">
             Player:
-            <img src="@routes.Assets.versioned("images/player" + activePlayer + ".png")" width="30" height="30" class="d-inline-block align-top" alt="">
+            <img id="player-image" src="@routes.Assets.versioned("images/player" + activePlayer + ".png")" width="30" height="30" class="d-inline-block align-top" alt="">
         </a>
         <a class="navbar-brand" href="#">
             Diced:
-            <img src="@routes.Assets.versioned("images/dice" + diced + ".png")" width="30" height="30" class="d-inline-block align-top" alt="">
+            <img id="dice-image" src="@routes.Assets.versioned("images/dice" + diced + ".png")" width="30" height="30" class="d-inline-block align-top" alt="">
         </a>
     </nav>
 

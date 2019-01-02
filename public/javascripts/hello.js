@@ -72,11 +72,34 @@ function updateGame() {
 
             success: function (result) {
 
+                $('#state-message').html(result.message)
+                $('#player-image').attr('src', '/assets/images/player'+result.activePlayer+'.png')
+                $('#dice-image').attr('src', '/assets/images/dice'+result.diced+'.png')
+
                 Object.entries(result.fields).forEach(
                     ([key, value]) => {
                         console.log(value)
                         if(!value.isFreeSpace) {
-                            $('.game-field').addClass('marked-field')
+                            var field = $('.game-field').filter('[x=' + value.x + ']').filter('[y=' + value.y + ']')
+                            if (value.avariable) {
+                                field.addClass('marked-field')
+                            } else {
+                                field.removeClass('marked-field')
+                            }
+
+                            if (value.sort == 'b')  {
+                               field.html('<div class="stone block-stone"></div>')
+                            } else if(value.sort == '1') {
+                                field.html('<div class="stone p1-stone"></div>')
+                            } else if(value.sort == '2') {
+                                field.html('<div class="stone p2-stone"></div>')
+                            } else if(value.sort == '3') {
+                                field.html('<div class="stone p3-stone"></div>')
+                            } else if(value.sort == '4') {
+                                field.html('<div class="stone p4-stone"></div>')
+                            }else {
+                                field.html('')
+                            }
                         }
                     }
             );
