@@ -1,14 +1,20 @@
 package controllers
 
-import javax.inject._
-import play.api.mvc._
+import akka.actor.{Actor, ActorRef, ActorSystem, Props}
+import akka.stream.Materializer
 import de.htwg.se.malefiz.Malefiz
-import de.htwg.se.malefiz.controller.{ControllerInterface, State}
+import de.htwg.se.malefiz.controller.ControllerInterface
+import de.htwg.se.malefiz.controller.State.{BeforeEndOfTurn, ChoosePlayerStone, ChooseTarget, SetBlockStone}
 import de.htwg.se.malefiz.model.gameboard.{Field, GameBoardInterface, PlayerStone}
+import javax.inject._
 import play.api.libs.json._
+import play.api.libs.streams.ActorFlow
+import play.api.mvc._
+
+import scala.swing.Reactor
 
 @Singleton
-class MalefizController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
+class MalefizController @Inject()(cc: ControllerComponents) (implicit system: ActorSystem, mat: Materializer) extends AbstractController(cc) {
 
   //parse TUI String
   def boardString: String = Malefiz.controller.gameBoard.toString.replaceAll("( ?[0-9]+ )|(16)", "").replace(" ", "#").replace("###", " ").dropRight(1)
@@ -23,16 +29,16 @@ class MalefizController @Inject()(cc: ControllerComponents) extends AbstractCont
   //parse game state message
   def message: String = {
     Malefiz.controller.state match {
-      case State.SetBlockStone =>
+      case SetBlockStone =>
         "Set a BlockStone"
 
-      case State.ChoosePlayerStone =>
+      case ChoosePlayerStone =>
         "Chose one of your Stones"
 
-      case State.ChooseTarget =>
+      case ChooseTarget =>
         "Chose a Target Field"
 
-      case State.BeforeEndOfTurn =>
+      case BeforeEndOfTurn =>
         "Press N to end your turn or U to undo"
 
       case _ => "next turn"
@@ -112,4 +118,39 @@ class MalefizController @Inject()(cc: ControllerComponents) extends AbstractCont
         "isFreeSpace" -> JsBoolean(true))
     }
   }
+
+
+  def socket = WebSocket.accept[String, String] { request =>
+    ActorFlow.actorRef { out =>
+      println("Connect received")
+      MalefizWebSocketActorFactory.create(out)
+    }
+  }
+
+  object MalefizWebSocketActorFactory {
+    def create(out: ActorRef) = {
+      Props(new MalefizWebSocketActor(out))
+    }
+  }
+
+  class MalefizWebSocketActor(out: ActorRef) extends Actor with Reactor{
+    listenTo(Malefiz.controller)
+
+    def receive = {
+      case msg: String =>
+        out ! gameToJson(Malefiz.controller).toString
+        println("Sent Json to Client"+ msg)
+    }
+
+    reactions += {
+      case event => sendJsonToClient
+    }
+
+    def sendJsonToClient = {
+      println("Received event from Controller")
+      out ! gameToJson(Malefiz.controller).toString
+    }
+  }
+
+
 }

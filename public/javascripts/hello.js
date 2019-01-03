@@ -166,7 +166,33 @@ $(document).click(function (event) {
     }
 });
 
+function connectWebSocket() {
+    var websocket = new WebSocket("ws://localhost:9000/websocket");
+    websocket.setTimeout
+
+    websocket.onopen = function(event) {
+        console.log("Connected to Websocket");
+    }
+
+    websocket.onclose = function () {
+        console.log('Connection with Websocket Closed!');
+    };
+
+    websocket.onerror = function (error) {
+        console.log('Error in Websocket Occured: ' + error);
+    };
+
+    websocket.onmessage = function (e) {
+        if (typeof e.data === "string") {
+            var json = JSON.parse(e.data);
+
+        }
+
+    };
+}
+
 $(document).ready(function () {
     addButtons()
+    connectWebSocket()
     console.log("document ready")
 });
