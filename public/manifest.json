@@ -1,0 +1,7 @@
+{
+  "name": "malefiz",
+  "short_name": "malefiz",
+  "description": "Malefiz for HTWG lecture Webtechnologies",
+  "start_url": "/",
+  "display": "standalone"
+}

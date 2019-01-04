@@ -1,0 +1,19 @@
+{
+  "name": "de.hatwg.wt.malefiz",
+  "version": "1.0.0",
+  "flat": true,
+  "description": "play malefiz",
+  "main": "index.html",
+  "repository": "https://github.com/jasafasa/de.htwg.wt.Malefiz.git",
+  "author": "Tim Hauenstein Fabian Steinhauser",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "@polymer/iron-icon": "^3.0.0-pre.12",
+    "@polymer/iron-icons": "^3.0.0-pre.12",
+    "@polymer/polymer": "^3.0.0-pre.12",
+    "@webcomponents/webcomponentsjs": "^1.0.20"
+  },
+  "resolutions": {
+    "@webcomponents/webcomponentsjs": "1.0.20"
+  }
+}
