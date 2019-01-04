@@ -1,3 +1,5 @@
+var gameJson = {"activePlayer":3,"diced":"6","message":"next turn","rows":[{"rowNr":0,"fields":[{"isFreeSpace":true,"x":0,"y":0,"sort":"f","avariable":false},{"isFreeSpace":true,"x":1,"y":0,"sort":"f","avariable":false},{"isFreeSpace":true,"x":2,"y":0,"sort":"f","avariable":false},{"isFreeSpace":true,"x":3,"y":0,"sort":"f","avariable":false},{"isFreeSpace":true,"x":4,"y":0,"sort":"f","avariable":false},{"isFreeSpace":true,"x":5,"y":0,"sort":"f","avariable":false},{"isFreeSpace":true,"x":6,"y":0,"sort":"f","avariable":false},{"isFreeSpace":true,"x":7,"y":0,"sort":"f","avariable":false},{"isFreeSpace":false,"x":8,"y":0,"sort":"f","avariable":false},{"isFreeSpace":true,"x":9,"y":0,"sort":"f","avariable":false},{"isFreeSpace":true,"x":10,"y":0,"sort":"f","avariable":false},{"isFreeSpace":true,"x":11,"y":0,"sort":"f","avariable":false},{"isFreeSpace":true,"x":12,"y":0,"sort":"f","avariable":false},{"isFreeSpace":true,"x":13,"y":0,"sort":"f","avariable":false},{"isFreeSpace":true,"x":14,"y":0,"sort":"f","avariable":false},{"isFreeSpace":true,"x":15,"y":0,"sort":"f","avariable":false},{"isFreeSpace":true,"x":16,"y":0,"sort":"f","avariable":false}]},{"rowNr":1,"fields":[{"isFreeSpace":false,"x":0,"y":1,"sort":"f","avariable":false},{"isFreeSpace":false,"x":1,"y":1,"sort":"f","avariable":false},{"isFreeSpace":false,"x":2,"y":1,"sort":"f","avariable":false},{"isFreeSpace":false,"x":3,"y":1,"sort":"f","avariable":false},{"isFreeSpace":false,"x":4,"y":1,"sort":"f","avariable":false},{"isFreeSpace":false,"x":5,"y":1,"sort":"f","avariable":false},{"isFreeSpace":false,"x":6,"y":1,"sort":"f","avariable":false},{"isFreeSpace":false,"x":7,"y":1,"sort":"f","avariable":false},{"isFreeSpace":false,"x":8,"y":1,"sort":"b","avariable":false},{"isFreeSpace":false,"x":9,"y":1,"sort":"f","avariable":false},{"isFreeSpace":false,"x":10,"y":1,"sort":"f","avariable":false},{"isFreeSpace":false,"x":11,"y":1,"sort":"f","avariable":false},{"isFreeSpace":false,"x":12,"y":1,"sort":"f","avariable":false},{"isFreeSpace":false,"x":13,"y":1,"sort":"f","avariable":false},{"isFreeSpace":false,"x":14,"y":1,"sort":"f","avariable":false},{"isFreeSpace":false,"x":15,"y":1,"sort":"f","avariable":false},{"isFreeSpace":false,"x":16,"y":1,"sort":"f","avariable":false}]},{"rowNr":2,"fields":[{"isFreeSpace":false,"x":0,"y":2,"sort":"f","avariable":false},{"isFreeSpace":true,"x":1,"y":2,"sort":"f","avariable":false},{"isFreeSpace":true,"x":2,"y":2,"sort":"f","avariable":false},{"isFreeSpace":true,"x":3,"y":2,"sort":"f","avariable":false},{"isFreeSpace":true,"x":4,"y":2,"sort":"f","avariable":false},{"isFreeSpace":true,"x":5,"y":2,"sort":"f","avariable":false},{"isFreeSpace":true,"x":6,"y":2,"sort":"f","avariable":false},{"isFreeSpace":true,"x":7,"y":2,"sort":"f","avariable":false},{"isFreeSpace":true,"x":8,"y":2,"sort":"f","avariable":false},{"isFreeSpace":true,"x":9,"y":2,"sort":"f","avariable":false},{"isFreeSpace":true,"x":10,"y":2,"sort":"f","avariable":false},{"isFreeSpace":true,"x":11,"y":2,"sort":"f","avariable":false},{"isFreeSpace":true,"x":12,"y":2,"sort":"f","avariable":false},{"isFreeSpace":true,"x":13,"y":2,"sort":"f","avariable":false},{"isFreeSpace":true,"x":14,"y":2,"sort":"f","avariable":false},{"isFreeSpace":true,"x":15,"y":2,"sort":"f","avariable":false},{"isFreeSpace":false,"x":16,"y":2,"sort":"f","avariable":false}]},{"rowNr":3,"fields":[{"isFreeSpace":false,"x":0,"y":3,"sort":"f","avariable":false},{"isFreeSpace":false,"x":1,"y":3,"sort":"f","avariable":false},{"isFreeSpace":false,"x":2,"y":3,"sort":"f","avariable":false},{"isFreeSpace":false,"x":3,"y":3,"sort":"f","avariable":false},{"isFreeSpace":false,"x":4,"y":3,"sort":"f","avariable":false},{"isFreeSpace":false,"x":5,"y":3,"sort":"f","avariable":false},{"isFreeSpace":false,"x":6,"y":3,"sort":"f","avariable":false},{"isFreeSpace":false,"x":7,"y":3,"sort":"f","avariable":false},{"isFreeSpace":false,"x":8,"y":3,"sort":"b","avariable":false},{"isFreeSpace":false,"x":9,"y":3,"sort":"f","avariable":false},{"isFreeSpace":false,"x":10,"y":3,"sort":"f","avariable":false},{"isFreeSpace":false,"x":11,"y":3,"sort":"f","avariable":false},{"isFreeSpace":false,"x":12,"y":3,"sort":"f","avariable":false},{"isFreeSpace":false,"x":13,"y":3,"sort":"f","avariable":false},{"isFreeSpace":false,"x":14,"y":3,"sort":"f","avariable":false},{"isFreeSpace":false,"x":15,"y":3,"sort":"f","avariable":false},{"isFreeSpace":false,"x":16,"y":3,"sort":"f","avariable":false}]},{"rowNr":4,"fields":[{"isFreeSpace":true,"x":0,"y":4,"sort":"f","avariable":false},{"isFreeSpace":true,"x":1,"y":4,"sort":"f","avariable":false},{"isFreeSpace":true,"x":2,"y":4,"sort":"f","avariable":false},{"isFreeSpace":true,"x":3,"y":4,"sort":"f","avariable":false},{"isFreeSpace":true,"x":4,"y":4,"sort":"f","avariable":false},{"isFreeSpace":true,"x":5,"y":4,"sort":"f","avariable":false},{"isFreeSpace":true,"x":6,"y":4,"sort":"f","avariable":false},{"isFreeSpace":true,"x":7,"y":4,"sort":"f","avariable":false},{"isFreeSpace":false,"x":8,"y":4,"sort":"b","avariable":false},{"isFreeSpace":true,"x":9,"y":4,"sort":"f","avariable":false},{"isFreeSpace":true,"x":10,"y":4,"sort":"f","avariable":false},{"isFreeSpace":true,"x":11,"y":4,"sort":"f","avariable":false},{"isFreeSpace":true,"x":12,"y":4,"sort":"f","avariable":false},{"isFreeSpace":true,"x":13,"y":4,"sort":"f","avariable":false},{"isFreeSpace":true,"x":14,"y":4,"sort":"f","avariable":false},{"isFreeSpace":true,"x":15,"y":4,"sort":"f","avariable":false},{"isFreeSpace":true,"x":16,"y":4,"sort":"f","avariable":false}]},{"rowNr":5,"fields":[{"isFreeSpace":true,"x":0,"y":5,"sort":"f","avariable":false},{"isFreeSpace":true,"x":1,"y":5,"sort":"f","avariable":false},{"isFreeSpace":true,"x":2,"y":5,"sort":"f","avariable":false},{"isFreeSpace":true,"x":3,"y":5,"sort":"f","avariable":false},{"isFreeSpace":true,"x":4,"y":5,"sort":"f","avariable":false},{"isFreeSpace":true,"x":5,"y":5,"sort":"f","avariable":false},{"isFreeSpace":false,"x":6,"y":5,"sort":"f","avariable":false},{"isFreeSpace":false,"x":7,"y":5,"sort":"f","avariable":false},{"isFreeSpace":false,"x":8,"y":5,"sort":"b","avariable":false},{"isFreeSpace":false,"x":9,"y":5,"sort":"f","avariable":false},{"isFreeSpace":false,"x":10,"y":5,"sort":"f","avariable":false},{"isFreeSpace":true,"x":11,"y":5,"sort":"f","avariable":false},{"isFreeSpace":true,"x":12,"y":5,"sort":"f","avariable":false},{"isFreeSpace":true,"x":13,"y":5,"sort":"f","avariable":false},{"isFreeSpace":true,"x":14,"y":5,"sort":"f","avariable":false},{"isFreeSpace":true,"x":15,"y":5,"sort":"f","avariable":false},{"isFreeSpace":true,"x":16,"y":5,"sort":"f","avariable":false}]},{"rowNr":6,"fields":[{"isFreeSpace":true,"x":0,"y":6,"sort":"f","avariable":false},{"isFreeSpace":true,"x":1,"y":6,"sort":"f","avariable":false},{"isFreeSpace":true,"x":2,"y":6,"sort":"f","avariable":false},{"isFreeSpace":true,"x":3,"y":6,"sort":"f","avariable":false},{"isFreeSpace":true,"x":4,"y":6,"sort":"f","avariable":false},{"isFreeSpace":true,"x":5,"y":6,"sort":"f","avariable":false},{"isFreeSpace":false,"x":6,"y":6,"sort":"f","avariable":false},{"isFreeSpace":true,"x":7,"y":6,"sort":"f","avariable":false},{"isFreeSpace":true,"x":8,"y":6,"sort":"f","avariable":false},{"isFreeSpace":true,"x":9,"y":6,"sort":"f","avariable":false},{"isFreeSpace":false,"x":10,"y":6,"sort":"f","avariable":false},{"isFreeSpace":true,"x":11,"y":6,"sort":"f","avariable":false},{"isFreeSpace":true,"x":12,"y":6,"sort":"f","avariable":false},{"isFreeSpace":true,"x":13,"y":6,"sort":"f","avariable":false},{"isFreeSpace":true,"x":14,"y":6,"sort":"f","avariable":false},{"isFreeSpace":true,"x":15,"y":6,"sort":"f","avariable":false},{"isFreeSpace":true,"x":16,"y":6,"sort":"f","avariable":false}]},{"rowNr":7,"fields":[{"isFreeSpace":true,"x":0,"y":7,"sort":"f","avariable":false},{"isFreeSpace":true,"x":1,"y":7,"sort":"f","avariable":false},{"isFreeSpace":true,"x":2,"y":7,"sort":"f","avariable":false},{"isFreeSpace":true,"x":3,"y":7,"sort":"f","avariable":false},{"isFreeSpace":false,"x":4,"y":7,"sort":"f","avariable":false},{"isFreeSpace":false,"x":5,"y":7,"sort":"f","avariable":false},{"isFreeSpace":false,"x":6,"y":7,"sort":"b","avariable":false},{"isFreeSpace":false,"x":7,"y":7,"sort":"f","avariable":false},{"isFreeSpace":false,"x":8,"y":7,"sort":"f","avariable":false},{"isFreeSpace":false,"x":9,"y":7,"sort":"f","avariable":false},{"isFreeSpace":false,"x":10,"y":7,"sort":"b","avariable":false},{"isFreeSpace":false,"x":11,"y":7,"sort":"f","avariable":false},{"isFreeSpace":false,"x":12,"y":7,"sort":"f","avariable":false},{"isFreeSpace":true,"x":13,"y":7,"sort":"f","avariable":false},{"isFreeSpace":true,"x":14,"y":7,"sort":"f","avariable":false},{"isFreeSpace":true,"x":15,"y":7,"sort":"f","avariable":false},{"isFreeSpace":true,"x":16,"y":7,"sort":"f","avariable":false}]},{"rowNr":8,"fields":[{"isFreeSpace":true,"x":0,"y":8,"sort":"f","avariable":false},{"isFreeSpace":true,"x":1,"y":8,"sort":"f","avariable":false},{"isFreeSpace":true,"x":2,"y":8,"sort":"f","avariable":false},{"isFreeSpace":true,"x":3,"y":8,"sort":"f","avariable":false},{"isFreeSpace":false,"x":4,"y":8,"sort":"f","avariable":false},{"isFreeSpace":true,"x":5,"y":8,"sort":"f","avariable":false},{"isFreeSpace":true,"x":6,"y":8,"sort":"f","avariable":false},{"isFreeSpace":true,"x":7,"y":8,"sort":"f","avariable":false},{"isFreeSpace":true,"x":8,"y":8,"sort":"f","avariable":false},{"isFreeSpace":true,"x":9,"y":8,"sort":"f","avariable":false},{"isFreeSpace":true,"x":10,"y":8,"sort":"f","avariable":false},{"isFreeSpace":true,"x":11,"y":8,"sort":"f","avariable":false},{"isFreeSpace":false,"x":12,"y":8,"sort":"f","avariable":false},{"isFreeSpace":true,"x":13,"y":8,"sort":"f","avariable":false},{"isFreeSpace":true,"x":14,"y":8,"sort":"f","avariable":false},{"isFreeSpace":true,"x":15,"y":8,"sort":"f","avariable":false},{"isFreeSpace":true,"x":16,"y":8,"sort":"f","avariable":false}]},{"rowNr":9,"fields":[{"isFreeSpace":true,"x":0,"y":9,"sort":"f","avariable":false},{"isFreeSpace":true,"x":1,"y":9,"sort":"f","avariable":false},{"isFreeSpace":false,"x":2,"y":9,"sort":"f","avariable":false},{"isFreeSpace":false,"x":3,"y":9,"sort":"f","avariable":false},{"isFreeSpace":false,"x":4,"y":9,"sort":"f","avariable":false},{"isFreeSpace":false,"x":5,"y":9,"sort":"f","avariable":false},{"isFreeSpace":false,"x":6,"y":9,"sort":"f","avariable":false},{"isFreeSpace":false,"x":7,"y":9,"sort":"f","avariable":false},{"isFreeSpace":false,"x":8,"y":9,"sort":"f","avariable":false},{"isFreeSpace":false,"x":9,"y":9,"sort":"f","avariable":false},{"isFreeSpace":false,"x":10,"y":9,"sort":"f","avariable":false},{"isFreeSpace":false,"x":11,"y":9,"sort":"f","avariable":false},{"isFreeSpace":false,"x":12,"y":9,"sort":"f","avariable":false},{"isFreeSpace":false,"x":13,"y":9,"sort":"f","avariable":false},{"isFreeSpace":false,"x":14,"y":9,"sort":"f","avariable":false},{"isFreeSpace":true,"x":15,"y":9,"sort":"f","avariable":false},{"isFreeSpace":true,"x":16,"y":9,"sort":"f","avariable":false}]},{"rowNr":10,"fields":[{"isFreeSpace":true,"x":0,"y":10,"sort":"f","avariable":false},{"isFreeSpace":true,"x":1,"y":10,"sort":"f","avariable":false},{"isFreeSpace":false,"x":2,"y":10,"sort":"f","avariable":false},{"isFreeSpace":true,"x":3,"y":10,"sort":"f","avariable":false},{"isFreeSpace":true,"x":4,"y":10,"sort":"f","avariable":false},{"isFreeSpace":true,"x":5,"y":10,"sort":"f","avariable":false},{"isFreeSpace":false,"x":6,"y":10,"sort":"f","avariable":false},{"isFreeSpace":true,"x":7,"y":10,"sort":"f","avariable":false},{"isFreeSpace":true,"x":8,"y":10,"sort":"f","avariable":false},{"isFreeSpace":true,"x":9,"y":10,"sort":"f","avariable":false},{"isFreeSpace":false,"x":10,"y":10,"sort":"f","avariable":false},{"isFreeSpace":true,"x":11,"y":10,"sort":"f","avariable":false},{"isFreeSpace":true,"x":12,"y":10,"sort":"f","avariable":false},{"isFreeSpace":true,"x":13,"y":10,"sort":"f","avariable":false},{"isFreeSpace":false,"x":14,"y":10,"sort":"f","avariable":false},{"isFreeSpace":true,"x":15,"y":10,"sort":"f","avariable":false},{"isFreeSpace":true,"x":16,"y":10,"sort":"f","avariable":false}]},{"rowNr":11,"fields":[{"isFreeSpace":false,"x":0,"y":11,"sort":"b","avariable":false},{"isFreeSpace":false,"x":1,"y":11,"sort":"f","avariable":false},{"isFreeSpace":false,"x":2,"y":11,"sort":"f","avariable":false},{"isFreeSpace":false,"x":3,"y":11,"sort":"f","avariable":false},{"isFreeSpace":false,"x":4,"y":11,"sort":"b","avariable":false},{"isFreeSpace":false,"x":5,"y":11,"sort":"f","avariable":false},{"isFreeSpace":false,"x":6,"y":11,"sort":"f","avariable":false},{"isFreeSpace":false,"x":7,"y":11,"sort":"f","avariable":false},{"isFreeSpace":false,"x":8,"y":11,"sort":"b","avariable":false},{"isFreeSpace":false,"x":9,"y":11,"sort":"f","avariable":false},{"isFreeSpace":false,"x":10,"y":11,"sort":"f","avariable":false},{"isFreeSpace":false,"x":11,"y":11,"sort":"f","avariable":false},{"isFreeSpace":false,"x":12,"y":11,"sort":"b","avariable":false},{"isFreeSpace":false,"x":13,"y":11,"sort":"f","avariable":false},{"isFreeSpace":false,"x":14,"y":11,"sort":"f","avariable":false},{"isFreeSpace":false,"x":15,"y":11,"sort":"f","avariable":false},{"isFreeSpace":false,"x":16,"y":11,"sort":"b","avariable":false}]},{"rowNr":12,"fields":[{"isFreeSpace":false,"x":0,"y":12,"sort":"f","avariable":false},{"isFreeSpace":true,"x":1,"y":12,"sort":"f","avariable":false},{"isFreeSpace":true,"x":2,"y":12,"sort":"f","avariable":false},{"isFreeSpace":true,"x":3,"y":12,"sort":"f","avariable":false},{"isFreeSpace":false,"x":4,"y":12,"sort":"f","avariable":false},{"isFreeSpace":true,"x":5,"y":12,"sort":"f","avariable":false},{"isFreeSpace":true,"x":6,"y":12,"sort":"f","avariable":false},{"isFreeSpace":true,"x":7,"y":12,"sort":"f","avariable":false},{"isFreeSpace":false,"x":8,"y":12,"sort":"f","avariable":false},{"isFreeSpace":true,"x":9,"y":12,"sort":"f","avariable":false},{"isFreeSpace":true,"x":10,"y":12,"sort":"f","avariable":false},{"isFreeSpace":true,"x":11,"y":12,"sort":"f","avariable":false},{"isFreeSpace":false,"x":12,"y":12,"sort":"f","avariable":false},{"isFreeSpace":true,"x":13,"y":12,"sort":"f","avariable":false},{"isFreeSpace":true,"x":14,"y":12,"sort":"f","avariable":false},{"isFreeSpace":true,"x":15,"y":12,"sort":"f","avariable":false},{"isFreeSpace":false,"x":16,"y":12,"sort":"f","avariable":false}]},{"rowNr":13,"fields":[{"isFreeSpace":false,"x":0,"y":13,"sort":"f","avariable":false},{"isFreeSpace":false,"x":1,"y":13,"sort":"f","avariable":false},{"isFreeSpace":false,"x":2,"y":13,"sort":"f","avariable":false},{"isFreeSpace":false,"x":3,"y":13,"sort":"f","avariable":false},{"isFreeSpace":false,"x":4,"y":13,"sort":"f","avariable":false},{"isFreeSpace":false,"x":5,"y":13,"sort":"f","avariable":false},{"isFreeSpace":false,"x":6,"y":13,"sort":"f","avariable":false},{"isFreeSpace":false,"x":7,"y":13,"sort":"f","avariable":false},{"isFreeSpace":false,"x":8,"y":13,"sort":"f","avariable":false},{"isFreeSpace":false,"x":9,"y":13,"sort":"f","avariable":false},{"isFreeSpace":false,"x":10,"y":13,"sort":"f","avariable":false},{"isFreeSpace":false,"x":11,"y":13,"sort":"f","avariable":false},{"isFreeSpace":false,"x":12,"y":13,"sort":"f","avariable":false},{"isFreeSpace":false,"x":13,"y":13,"sort":"f","avariable":false},{"isFreeSpace":false,"x":14,"y":13,"sort":"f","avariable":false},{"isFreeSpace":false,"x":15,"y":13,"sort":"f","avariable":false},{"isFreeSpace":false,"x":16,"y":13,"sort":"f","avariable":false}]},{"rowNr":14,"fields":[{"isFreeSpace":true,"x":0,"y":14,"sort":"f","avariable":false},{"isFreeSpace":false,"x":1,"y":14,"sort":"1","avariable":false},{"isFreeSpace":false,"x":2,"y":14,"sort":"1","avariable":false},{"isFreeSpace":false,"x":3,"y":14,"sort":"1","avariable":false},{"isFreeSpace":true,"x":4,"y":14,"sort":"f","avariable":false},{"isFreeSpace":false,"x":5,"y":14,"sort":"2","avariable":false},{"isFreeSpace":false,"x":6,"y":14,"sort":"2","avariable":false},{"isFreeSpace":false,"x":7,"y":14,"sort":"2","avariable":false},{"isFreeSpace":true,"x":8,"y":14,"sort":"f","avariable":false},{"isFreeSpace":false,"x":9,"y":14,"sort":"3","avariable":false},{"isFreeSpace":false,"x":10,"y":14,"sort":"3","avariable":false},{"isFreeSpace":false,"x":11,"y":14,"sort":"3","avariable":false},{"isFreeSpace":true,"x":12,"y":14,"sort":"f","avariable":false},{"isFreeSpace":false,"x":13,"y":14,"sort":"4","avariable":false},{"isFreeSpace":false,"x":14,"y":14,"sort":"4","avariable":false},{"isFreeSpace":false,"x":15,"y":14,"sort":"4","avariable":false},{"isFreeSpace":true,"x":16,"y":14,"sort":"f","avariable":false}]},{"rowNr":15,"fields":[{"isFreeSpace":true,"x":0,"y":15,"sort":"f","avariable":false},{"isFreeSpace":false,"x":1,"y":15,"sort":"1","avariable":false},{"isFreeSpace":true,"x":2,"y":15,"sort":"f","avariable":false},{"isFreeSpace":false,"x":3,"y":15,"sort":"1","avariable":false},{"isFreeSpace":true,"x":4,"y":15,"sort":"f","avariable":false},{"isFreeSpace":false,"x":5,"y":15,"sort":"2","avariable":false},{"isFreeSpace":true,"x":6,"y":15,"sort":"f","avariable":false},{"isFreeSpace":false,"x":7,"y":15,"sort":"2","avariable":false},{"isFreeSpace":true,"x":8,"y":15,"sort":"f","avariable":false},{"isFreeSpace":false,"x":9,"y":15,"sort":"3","avariable":false},{"isFreeSpace":true,"x":10,"y":15,"sort":"f","avariable":false},{"isFreeSpace":false,"x":11,"y":15,"sort":"3","avariable":false},{"isFreeSpace":true,"x":12,"y":15,"sort":"f","avariable":false},{"isFreeSpace":false,"x":13,"y":15,"sort":"4","avariable":false},{"isFreeSpace":true,"x":14,"y":15,"sort":"f","avariable":false},{"isFreeSpace":false,"x":15,"y":15,"sort":"4","avariable":false},{"isFreeSpace":true,"x":16,"y":15,"sort":"f","avariable":false}]}]};
+
 function undo() {
     console.log("undo")
     $.ajax(
@@ -40,15 +42,23 @@ function nextTurn() {
     )
 }
 
+function newGame() {
+    console.log("newgame")
+    $.ajax(
+        {
+            type: 'GET',
+            url: "new/" + $('#newGamePlayerCount').val(),
+
+            success: function (result) {
+                updateGame()
+            }
+        }
+    )
+}
+
 function addButtons() {
     $('#newButton').click(function () {
-        console.log("newgame 2")
-        $.ajax(
-            {
-                type: 'GET',
-                url: "new/" + $('#newGamePlayerCount').val(),
-            }
-        )
+        newGame();
     });
 
     $('#undoButton').click(function () {
@@ -72,37 +82,36 @@ function updateGame() {
 
             success: function (result) {
 
-                $('#state-message').html(result.message)
-                $('#player-image').attr('src', '/assets/images/player'+result.activePlayer+'.png')
-                $('#dice-image').attr('src', '/assets/images/dice'+result.diced+'.png')
+                $('#state-message').html(result.message);
+                $('#player-image').attr('src', '/assets/images/player'+result.activePlayer+'.png');
+                $('#dice-image').attr('src', '/assets/images/dice'+result.diced+'.png');
 
-                Object.entries(result.fields).forEach(
-                    ([key, value]) => {
-                        console.log(value)
-                        if(!value.isFreeSpace) {
-                            var field = $('.game-field').filter('[x=' + value.x + ']').filter('[y=' + value.y + ']')
-                            if (value.avariable) {
-                                field.addClass('marked-field')
+                for(var row in result.rows) {
+                    for(var fieldJson in row) {
+                        if(!fieldJson.isFreeSpace) {
+                            var field = $('.gameField').filter('[x=' + fieldJson.x + ']').filter('[y=' + fieldJson.y + ']')
+                            if (fieldJson.avariable) {
+                                field.addClass('markedField')
                             } else {
-                                field.removeClass('marked-field')
+                                field.removeClass('markedField')
                             }
 
-                            if (value.sort == 'b')  {
-                               field.html('<div class="stone block-stone"></div>')
-                            } else if(value.sort == '1') {
-                                field.html('<div class="stone p1-stone"></div>')
-                            } else if(value.sort == '2') {
-                                field.html('<div class="stone p2-stone"></div>')
-                            } else if(value.sort == '3') {
-                                field.html('<div class="stone p3-stone"></div>')
-                            } else if(value.sort == '4') {
-                                field.html('<div class="stone p4-stone"></div>')
+                            if (fieldJson.sort == 'b')  {
+                                field.html('<div class="stone blockStone"></div>')
+                            } else if(fieldJson.sort == '1') {
+                                field.html('<div class="stone p1Stone"></div>')
+                            } else if(fieldJson.sort == '2') {
+                                field.html('<div class="stone p2Stone"></div>')
+                            } else if(fieldJson.sort == '3') {
+                                field.html('<div class="stone p3Stone"></div>')
+                            } else if(fieldJson.sort == '4') {
+                                field.html('<div class="stone p4Stone"></div>')
                             }else {
                                 field.html('')
                             }
                         }
                     }
-            );
+                }
             }
         }
     )
@@ -167,6 +176,64 @@ $(document).click(function (event) {
 });
 
 $(document).ready(function () {
-    addButtons()
-    console.log("document ready")
+    addButtons();
+    console.log("document ready");
+});
+
+Vue.component('board', {
+    template: `<div class="board">
+    <div v-for="row in rows" class="row">
+      <field v-for="field in row.fields" v-bind:x="field.x" v-bind:y="field.y"></field>
+    </div>
+  </div>`,
+    data: function(){
+        return {
+            rows: gameJson.rows
+        }
+    },
+});
+
+Vue.component('field', {
+    template: '<div v-bind:class="compFiledClasses" v-on:click="changeMarked"><div v-if="containsStone" v-bind:class="compStoneClasses"></div></div>',
+    data: function(){
+        return {
+            isFreeSpace: false,
+            marked: false,
+            x: 0,
+            y: 0,
+            sort: "f"
+        }
+    },
+    methods: {
+        changeMarked: function() {
+            this.marked = !this.marked;
+        }
+
+    },
+    computed: {
+        compFiledClasses: function(){
+            return {
+                field: true,
+                gameField: !this.isFreeSpace,
+                markedField: this.marked,
+            }
+        },
+        compStoneClasses: function(){
+            return {
+                stone: this.sort != 'f',
+                blockStone: this.sort == 'b',
+                p1Stone: this.sort == '1',
+                p2Stone: this.sort == '2',
+                p3Stone: this.sort == '3',
+                p4Stone: this.sort == '4',
+            }
+        },
+        containsStone: function(){
+            return true
+        }
+    }
+});
+
+new Vue({
+    el: '#vueBoard'
 });
