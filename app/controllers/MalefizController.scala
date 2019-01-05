@@ -48,9 +48,7 @@ class MalefizController @Inject()(cc: ControllerComponents) (implicit system: Ac
   def malefiz = Action {
     Ok(views.html.malefiz(boardString, activePlayerColorString, diced, message))
   }
-  def malefizPolymer = Action {
-    Ok(views.html.malefizPolymer())
-  }
+
   def info = Action {
     Ok(views.html.info())
   }

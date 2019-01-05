@@ -78,7 +78,6 @@ function updateGame() {
 
                 Object.entries(result.fields).forEach(
                     ([key, value]) => {
-                        console.log(value)
                         if(!value.isFreeSpace) {
                             var field = $('.game-field').filter('[x=' + value.x + ']').filter('[y=' + value.y + ']')
                             if (value.avariable) {
