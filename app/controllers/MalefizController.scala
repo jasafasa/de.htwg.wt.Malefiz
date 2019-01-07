@@ -81,11 +81,19 @@ class MalefizController @Inject()(cc: ControllerComponents) extends AbstractCont
       "activePlayer" -> JsNumber(controller.activePlayer.color),
       "diced" -> JsString(diced),
       "message" -> JsString(message),
+      "rows" -> Json.toJson(
+        for {
+          y <- 0 to 15
+        } yield rowToJson(controller.gameBoard, y)))
+  }
+
+  def rowToJson(gameBoard: GameBoardInterface, y: Int): JsObject = {
+    Json.obj(
+      "rowNr" -> JsNumber(y),
       "fields" -> Json.toJson(
         for {
           x <- 0 to 16
-          y <- 0 to 15
-        } yield fieldToJson(controller.gameBoard, x, y)))
+        } yield fieldToJson(gameBoard, x, y)))
   }
 
   def fieldToJson(gameBoard: GameBoardInterface, x: Int, y: Int): JsObject = {
@@ -109,7 +117,11 @@ class MalefizController @Inject()(cc: ControllerComponents) extends AbstractCont
       }
     } else {
       Json.obj(
-        "isFreeSpace" -> JsBoolean(true))
+        "isFreeSpace" -> JsBoolean(true),
+        "x" -> JsNumber(x),
+        "y" -> JsNumber(y),
+        "sort" -> JsString("f"),
+        "avariable" -> JsBoolean(false))
     }
   }
 }

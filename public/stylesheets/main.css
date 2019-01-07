@@ -17,12 +17,12 @@
     display: inline-block;
 }
 
-.game-field {
+.gameField {
     background: black;
     border-radius: 50%;
 }
 
-.marked-field {
+.markedField {
     background: darkmagenta;
 }
 
@@ -33,23 +33,22 @@
     margin: 0 auto;
 }
 
-.block-stone {
+.blockStone {
     background: white;
 }
 
-
-.p1-stone {
+.p1Stone {
     background: red;
 }
 
-.p2-stone {
+.p2Stone {
     background: green;
 }
 
-.p3-stone {
+.p3Stone {
     background: yellow;
 }
 
-.p4-stone {
+.p4Stone {
     background: blue;
 }
