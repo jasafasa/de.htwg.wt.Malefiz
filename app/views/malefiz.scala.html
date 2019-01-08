@@ -9,11 +9,11 @@
     </form>
 
     <div id="vueBoard" class="game">
-        <div><a id="state-message" class="navbar-brand" href="#">@message   </a></div>
-        <div class="buttonBox">
-            <button id="undoButton" class="orange">Undo</button>
-            <button id="redoButton" class="blue">Redo</button>
-            <button id="nextButton" class="red">Next</button>
+        <div class="controls">
+            <div><a id="state-message" class="navbar-brand" href="#">@message   </a></div>
+            <button id="undoButton" class="red">Undo</button>
+            <button id="redoButton" class="red">Redo</button>
+            <button id="nextButton" class="blue">Next</button>
             <a>
                 Player:
                 <img id="player-image" src="@routes.Assets.versioned("images/player" + activePlayer + ".png")" width="30" height="30" class="d-inline-block align-top" alt="">
