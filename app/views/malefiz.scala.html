@@ -3,43 +3,26 @@
 
 @main("HTWG Malefiz") {
 
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
-        <a class="navbar-brand" href="/">Malefiz</a>
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Edit
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <button id="undoButton" type="button" value="button" class="dropdown-item">undo</button>
-                    <button id="redoButton" type="button" value="button" class="dropdown-item">redo</button>
-                    <button id="nextButton" type="button" value="button" class="dropdown-item">next</button>
-                </div>
-            </li>
-            <li>
-                <form class="form-inline">
-                    <input id="newGamePlayerCount" class="form-control mr-sm-2" type="search" placeholder="Player Count (2-4)" aria-label="Player Count">
-                    <button id="newButton" class="btn btn-outline-success my-2 my-sm-0">New Game</button>
-                </form>
-            </li>
-        </ul>
-        <a id="state-message" class="navbar-brand" href="#">@message   </a>
-        <a class="navbar-brand" href="#">
-            Player:
-            <img id="player-image" src="@routes.Assets.versioned("images/player" + activePlayer + ".png")" width="30" height="30" class="d-inline-block align-top" alt="">
-        </a>
-        <a class="navbar-brand" href="#">
-            Diced:
-            <img id="dice-image" src="@routes.Assets.versioned("images/dice" + diced + ".png")" width="30" height="30" class="d-inline-block align-top" alt="">
-        </a>
-    </nav>
+    <form class="form-inline">
+        <input id="newGamePlayerCount" class="form-control mr-sm-2" type="search" placeholder="Player Count (2-4)" aria-label="Player Count">
+        <button id="newButton" class="btn btn-outline-success my-2 my-sm-0">New Game</button>
+    </form>
 
     <div id="vueBoard" class="game">
-
+        <div><a id="state-message" class="navbar-brand" href="#">@message   </a></div>
+        <div class="buttonBox">
+            <button id="undoButton" class="orange">Undo</button>
+            <button id="redoButton" class="blue">Redo</button>
+            <button id="nextButton" class="red">Next</button>
+            <a>
+                Player:
+                <img id="player-image" src="@routes.Assets.versioned("images/player" + activePlayer + ".png")" width="30" height="30" class="d-inline-block align-top" alt="">
+            </a>
+            <a>
+                Diced:
+                <img id="dice-image" src="@routes.Assets.versioned("images/dice" + diced + ".png")" width="30" height="30" class="d-inline-block align-top" alt="">
+            </a>
+        </div>
         <board></board>
-
     </div>
 }

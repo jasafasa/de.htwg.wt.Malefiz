@@ -1,14 +1,14 @@
 .game {
     height: 100%;
     width: 100%;
+    margin: 2%;
+    align: center;
 }
 
 .board {
     background-color: orange;
     border: medium solid black;
-    margin: 2%;
     padding: 1%;
-    float: left;
 }
 
 .field {
@@ -52,3 +52,4 @@
 .p4Stone {
     background: blue;
 }
+
