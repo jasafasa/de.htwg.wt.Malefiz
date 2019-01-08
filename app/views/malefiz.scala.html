@@ -5,7 +5,7 @@
 @(currentGB: String, activePlayer: String, diced: String, message: String,user: models.User)(implicit request: RequestHeader, messages: Messages, webJarsUtil: WebJarsUtil, assets: AssetsFinder)
 @import java.math.BigInteger; var x = 0; var y = 0
 
-@main("HTWG Malefiz") {
+@main(messages("home.title"), Some(user)) {
     <link rel="stylesheet"  media="screen" href="@assets.path("styles/home.css")">
     <link rel="shortcut icon" type="image/png" href="@assets.path("images/favicon.png")">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
