@@ -23,6 +23,18 @@ POST        /password/change                 controllers.ChangePasswordControlle
 GET         /account/email/:email            controllers.ActivateAccountController.send(email: String)
 GET         /account/activate/:token         controllers.ActivateAccountController.activate(token: java.util.UUID)
 
+GET        /malefiz                     controllers.MalefizController.malefiz
+GET        /info                 controllers.MalefizController.info
+GET        /new/$n<[2-4]>        controllers.MalefizController.newGame(n: Int)
+GET        /touch/:x/:y          controllers.MalefizController.takeInput(x: Int, y: Int)
+GET        /turn                 controllers.MalefizController.endTurn()
+GET        /undo                 controllers.MalefizController.undo()
+GET        /redo                 controllers.MalefizController.redo()
+GET        /gameJson             controllers.MalefizController.gameJson()
+
+
+
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file                    controllers.Assets.versioned(file)
+GET        /assets/*file         controllers.Assets.versioned(path="/public", file: Asset)
+
 ->          /webjars                         webjars.Routes
