@@ -2,7 +2,7 @@ import com.typesafe.sbt.SbtScalariform._
 
 import scalariform.formatter.preferences._
 
-name := "Malefiz Web"
+name := "de.htwg.wt.malefiz"
 
 version := "1.0.0"
 
