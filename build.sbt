@@ -2,9 +2,9 @@ import com.typesafe.sbt.SbtScalariform._
 
 import scalariform.formatter.preferences._
 
-name := "play-silhouette-seed"
+name := "Malefiz Web"
 
-version := "5.0.5"
+version := "1.0.0"
 
 scalaVersion := "2.12.6"
 
@@ -32,6 +32,12 @@ libraryDependencies ++= Seq(
   guice,
   filters
 )
+
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.4" % "test"
+
+libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test
+
+libraryDependencies += "com.h2database" % "h2" % "1.4.196"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
