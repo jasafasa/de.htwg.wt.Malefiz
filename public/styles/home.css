@@ -1,0 +1,54 @@
+.game {
+    height: 100%;
+    width: 100%;
+}
+
+.board {
+    background-color: orange;
+    border: medium solid black;
+    margin: 2%;
+    padding: 1%;
+    float: left;
+}
+
+.field {
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+}
+
+.gameField {
+    background: black;
+    border-radius: 50%;
+}
+
+.markedField {
+    background: darkmagenta;
+}
+
+.stone {
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+}
+
+.blockStone {
+    background: white;
+}
+
+.p1Stone {
+    background: red;
+}
+
+.p2Stone {
+    background: green;
+}
+
+.p3Stone {
+    background: yellow;
+}
+
+.p4Stone {
+    background: blue;
+}
