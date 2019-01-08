@@ -50,8 +50,8 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
     Future.successful(Ok(views.html.malefiz(boardString, activePlayerColorString, diced, message, request.identity)))
   }
 
-  def info = silhouette.UnsecuredAction {
-    Ok(views.html.info())
+  def about = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
+    Future.successful(Ok(views.html.about(request.identity)))
   }
 
   def newGame(n: Int) = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>

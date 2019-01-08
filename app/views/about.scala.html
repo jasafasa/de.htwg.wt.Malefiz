@@ -1,5 +1,10 @@
-@main("About") {
+@import play.api.i18n.Messages
+@import play.api.mvc.RequestHeader
+@import org.webjars.play.WebJarsUtil
+@import controllers.AssetsFinder
+@(user: models.User)(implicit request: RequestHeader, messages: Messages, webJarsUtil: WebJarsUtil, assets: AssetsFinder)
 
+@main(messages("home.title"), Some(user)) {
     <h2 id="howtoplay">How to Play</h2>
 
     <h3 id="explanationoftheuserinterface">Explanation of the user interface</h3>
@@ -27,5 +32,4 @@
 
     <p>This implementation comes along with a <em>TUI</em> (textual user interface) and <em>GUI</em>
         (graphical user interface).</p>
-
 }
