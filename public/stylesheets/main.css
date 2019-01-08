@@ -1,14 +1,24 @@
+.body {
+    position: relative;
+}
+
 .game {
-    height: 100%;
-    width: 100%;
     margin: 2%;
-    align: center;
+    display: inline-block;
+}
+
+.controls {
+    background-color: darkorange;
+    border-top: medium solid black;
+    border-left: medium solid black;
+    border-right: medium solid black;
 }
 
 .board {
     background-color: orange;
     border: medium solid black;
-    padding: 1%;
+    border-top: medium solid black;
+    padding: 1em;
 }
 
 .field {
