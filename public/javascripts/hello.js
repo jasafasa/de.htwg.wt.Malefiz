@@ -184,7 +184,7 @@ $(document).ready(function () {
 Vue.component('board', {
     template: `<div class="board">
     <div v-for="row in rows" class="row">
-      <div class="field" v-for="field in row.fields" v-bind:x="field.x" v-bind:y="field.y"></div>
+      <field v-for="field in row.fields" v-bind:x="field.x" v-bind:y="field.y"></field>
     </div>
   </div>`,
     data: function(){
@@ -192,6 +192,11 @@ Vue.component('board', {
             rows: gameJson.rows
         }
     },
+});
+
+Vue.component('field', {
+    template: '<div class="field"></div>',
+
 });
 
 new Vue({
