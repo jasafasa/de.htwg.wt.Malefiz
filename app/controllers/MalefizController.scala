@@ -155,7 +155,7 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
     }
 
     reactions += {
-      case _ => sendJsonToClient()
+      case _ => print("test")
     }
 
     def sendJsonToClient(): Unit = {
