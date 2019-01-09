@@ -124,11 +124,7 @@ meter::-webkit-meter-even-less-good-value { background: red; }
 meter::-webkit-meter-suboptimum-value { background: orange; }
 meter::-webkit-meter-optimum-value { background: green; }
 
-meter[value="1"]::-moz-meter-bar,
-meter[value="1"]::-moz-meter-bar { background: red; }
-meter[value="2"]::-moz-meter-bar { background: orange; }
-meter[value="3"]::-moz-meter-bar { background: yellow; }
-meter[value="4"]::-moz-meter-bar { background: green; }
+
 
 meter::-webkit-meter-optimum-value {
     transition: width .4s ease-out;
