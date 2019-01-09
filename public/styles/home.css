@@ -1,26 +1,21 @@
-.game {
-    margin: 2%;
-    display: inline-block;
-}
-
-.controls {
-    background-color: darkorange;
-    border-top: medium solid black;
-    border-left: medium solid black;
-    border-right: medium solid black;
-}
-
 .board {
     background-color: orange;
     border: medium solid black;
     border-top: medium solid black;
+    min-height: 32em;
     padding: 1em;
+}
+
+.row{
+    min-width: 34em;
+    margin: auto;
 }
 
 .field {
     width: 2em;
     height: 2em;
     display: inline-block;
+    margin: 0.04em;
 }
 
 .gameField {
@@ -30,6 +25,10 @@
 
 .markedField {
     background: darkmagenta;
+}
+
+.markedField:hover {
+    background: magenta;
 }
 
 .stone {
