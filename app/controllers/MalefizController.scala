@@ -149,15 +149,13 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
 
   class MalefizWebSocketActor(out: ActorRef) extends Actor with Reactor {
     listenTo(Malefiz.controller)
-
-    def receive = {
-      case msg: String =>
-        out ! gameToJson(Malefiz.controller).toString
-        println("Sent Json to Client" + msg)
+    override def receive: Receive = {
+      // at the moment msg is ignored and we sent always game board as json
+      case _: String => out ! gameToJson(Malefiz.controller).toString
     }
 
     reactions += {
-      case event => sendJsonToClient()
+      case _ => sendJsonToClient()
     }
 
     def sendJsonToClient(): Unit = {
