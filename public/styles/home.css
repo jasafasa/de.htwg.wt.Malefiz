@@ -3,11 +3,11 @@
     border: medium solid black;
     border-top: medium solid black;
     min-height: 32em;
-    padding: 1em;
+    padding: 0.5em;
 }
 
 .row{
-    min-width: 34em;
+    min-width: 35.36em;
     margin: auto;
 }
 
