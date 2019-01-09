@@ -195,6 +195,7 @@ function connectWebSocket() {
 
     websocket.onmessage = function (e) {
         if (typeof e.data === "string") {
+            console.log('recieved')
             updateGame()
         }
 
