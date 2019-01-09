@@ -176,9 +176,7 @@ $(document).click(function (event) {
     }
 });
 
-window.setInterval(function(){
-    updateGame()
-}, 1000);
+
 
 function connectWebSocket() {
     var websocket = new WebSocket("wss://malefiz-web.herokuapp.com/websocket");
