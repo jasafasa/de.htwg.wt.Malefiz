@@ -177,7 +177,7 @@ $(document).click(function (event) {
 });
 
 function connectWebSocket() {
-    var websocket = new WebSocket("ws://localhost:9000/websocket");
+    var websocket = new WebSocket("ws://malefiz-web.herokuapp.com/websocket");
     websocket.setTimeout
 
     websocket.onopen = function(event) {
