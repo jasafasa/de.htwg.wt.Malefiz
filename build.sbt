@@ -2,7 +2,7 @@ import com.typesafe.sbt.SbtScalariform._
 
 import scalariform.formatter.preferences._
 
-name := "de.htwg.wt.malefiz"
+name := "play-silhouette-seed"
 
 version := "1.0.0"
 
