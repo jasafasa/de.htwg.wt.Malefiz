@@ -46,6 +46,7 @@ function newGame() {
             url: "new/" + $('#newGamePlayerCount').val(),
 
             success: function (result) {
+                websocket.send('message');
                 updateGame()
             }
         }
@@ -121,6 +122,7 @@ function updateGame() {
             }
         }
     )
+
 }
 
 $(document).keypress(function (event) {
@@ -152,6 +154,7 @@ $(document).click(function (event) {
                 url: "touch/" + x + "/" + y,
 
                 success: function () {
+                    websocket.send('message');
                     updateGame()
                 }
             }
