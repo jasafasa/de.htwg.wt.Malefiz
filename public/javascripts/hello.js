@@ -184,6 +184,7 @@ function connectWebSocket() {
 
     websocket.onopen = function(event) {
         console.log("Connected to Websocket");
+        socket.send('Hello Server!');
         updateGame()
     }
 
