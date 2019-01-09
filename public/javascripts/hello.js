@@ -39,11 +39,11 @@ function nextTurn() {
     )
 }
 
-function newGame() {
+function newGame(count) {
     $.ajax(
         {
             type: 'GET',
-            url: "new/" + $('#newGamePlayerCount').val(),
+            url: "new/" + count,
 
             success: function (result) {
                 updateGame()
@@ -137,6 +137,19 @@ $(document).keypress(function (event) {
 });
 
 $(document).click(function (event) {
+    //---close dropdown if opened----------
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+    //----------------------------------------
+
     var target = $(event.target)
 
     if (target.hasClass("stone")) {
@@ -183,7 +196,7 @@ $(document).ready(function () {
 
 Vue.component('board', {
     template: `<div class="board">
-    <div v-for="row in rows" class="row">
+    <div v-for="row in rows" class="gameRow">
       <field v-for="field in row.fields" v-bind:x="field.x" v-bind:y="field.y"></field>
     </div>
   </div>`,
@@ -202,3 +215,8 @@ Vue.component('field', {
 new Vue({
     el: '#vueBoard'
 });
+
+
+function openNewGameDropdown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}

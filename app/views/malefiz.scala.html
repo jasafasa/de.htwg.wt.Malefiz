@@ -11,19 +11,44 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
     <body>
-        <button id="undoButton" class="red">Undo</button>
-        <button id="redoButton" class="red">Redo</button>
-        <button id="nextButton" class="blue">Next</button>
-        <a id="state-message">@message</a>
-        <a>Player:<img id="player-image" src="@assets.path("images/player" + activePlayer + ".png")" width="30" height="30" class="d-inline-block align-top" alt=""></a>
-        <a>Diced:<img id="dice-image" src="@assets.path("images/dice" + diced + ".png")" width="30" height="30" class="d-inline-block align-top" alt=""></a>
-        <form class="form-inline">
-            <input id="newGamePlayerCount" class="form-control mr-sm-2" type="search" placeholder="Player Count (2-4)" aria-label="Player Count">
-            <button id="newButton" class="btn btn-outline-success my-2 my-sm-0">New Game</button>
-        </form>
-        <div id="vueBoard" class="game">
-            <board></board>
+        <div id="vueBoard" class="game table">
+
+            <div class="row">
+                <p class="col" id="state-message">@message</p>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    Player:<img id="player-image" src="@assets.path("images/player" + activePlayer + ".png")" width="30" height="30" class="d-inline-block align-top" alt="">
+                    Diced:<img id="dice-image" src="@assets.path("images/dice" + diced + ".png")" width="30" height="30" class="d-inline-block align-top" alt="">
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col">
+                    <div class="dropdown">
+                        <button onclick="openNewGameDropdown()" class="dropbtn blue">New Game</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a onclick="newGame(2)">2 Player</a>
+                            <a onclick="newGame(3)">3 Player</a>
+                            <a onclick="newGame(4)">4 Player</a>
+                        </div>
+                    </div>
+
+                    <button id="undoButton" class="red">Undo</button>
+                    <button id="redoButton" class="red">Redo</button>
+                    <button id="nextButton" class="blue">Next</button>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <board></board>
+            </div>
         </div>
+
     </body>
     <script src="@assets.path("javascripts/hello.js")" type="text/javascript"></script>
 }
