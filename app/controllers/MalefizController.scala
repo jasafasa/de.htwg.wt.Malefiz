@@ -1,6 +1,6 @@
 package controllers
 
-import akka.actor.ActorSystem
+import akka.actor.{ Actor, ActorRef, ActorSystem, Props }
 import akka.stream.Materializer
 import com.mohiva.play.silhouette.api.Silhouette
 import com.mohiva.play.silhouette.api.actions.SecuredRequest
@@ -12,9 +12,11 @@ import de.htwg.se.malefiz.model.gameboard.{ Field, GameBoardInterface, PlayerSto
 import org.webjars.play.WebJarsUtil
 import play.api.i18n.I18nSupport
 import play.api.libs.json._
+import play.api.libs.streams.ActorFlow
 import utils.auth.DefaultEnv
 
 import scala.concurrent.Future
+import scala.swing.Reactor
 @Singleton
 class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUtil: WebJarsUtil, system: ActorSystem, assets: AssetsFinder, materializer: Materializer, silhouette: Silhouette[DefaultEnv]) extends AbstractController(cc) with I18nSupport {
 
@@ -129,6 +131,38 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
         "y" -> JsNumber(y),
         "sort" -> JsString("f"),
         "avariable" -> JsBoolean(false))
+    }
+  }
+
+  def socket = WebSocket.accept[String, String] { request =>
+    ActorFlow.actorRef { out =>
+      println("Connect received")
+      MalefizWebSocketActorFactory.create(out)
+    }
+  }
+
+  object MalefizWebSocketActorFactory {
+    def create(out: ActorRef) = {
+      Props(new MalefizWebSocketActor(out))
+    }
+  }
+
+  class MalefizWebSocketActor(out: ActorRef) extends Actor with Reactor {
+    listenTo(Malefiz.controller)
+
+    def receive = {
+      case msg: String =>
+        out ! gameToJson(Malefiz.controller).toString
+        println("Sent Json to Client" + msg)
+    }
+
+    reactions += {
+      case event => sendJsonToClient()
+    }
+
+    def sendJsonToClient(): Unit = {
+      println("Received event from Controller")
+      out ! gameToJson(Malefiz.controller).toString
     }
   }
 }
