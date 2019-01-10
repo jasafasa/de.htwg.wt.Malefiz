@@ -72,7 +72,6 @@ function addButtons() {
 
 function updateGame(result) {
 
-
                 $('#state-message').html(result.message);
                 $('#player-image').attr('src', '/assets/images/player'+result.activePlayer+'.png');
                 $('#dice-image').attr('src', '/assets/images/dice'+result.diced+'.png');
@@ -190,7 +189,7 @@ function connectWebSocket() {
 
     websocket.onmessage = function (e) {
         if (typeof e.data === "string") {
-            let data = JSON.parse(message.data);
+            let data = JSON.parse(e.data);
             updateGame(data)
         }
     };
