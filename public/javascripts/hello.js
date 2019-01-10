@@ -176,7 +176,6 @@ function connectWebSocket() {
     websocket.setTimeout()
     websocket.onopen = function(event) {
         console.log("Connected to Websocket");
-        updateGame()
     }
 
     websocket.onclose = function () {
