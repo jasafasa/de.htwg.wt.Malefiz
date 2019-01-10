@@ -1,7 +1,3 @@
-.gameInfo {
-    text-align: center;
-}
-
 .board {
     background-color: orange;
     border: medium solid black;
@@ -25,21 +21,16 @@
 .gameField {
     background: black;
     border-radius: 50%;
+    border: 0.25em solid black;
 }
 
 .markedField {
+    border-color: darkmagenta;
     background: darkmagenta;
 }
 
 .markedField:hover {
-    background: magenta;
-}
-
-.stone {
-    border-radius: 50%;
-    width: 80%;
-    height: 80%;
-    margin: 0 auto;
+    border-color: magenta;
 }
 
 .blockStone {

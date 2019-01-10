@@ -18,9 +18,6 @@ import scala.concurrent.Future
 @Singleton
 class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUtil: WebJarsUtil, system: ActorSystem, assets: AssetsFinder, materializer: Materializer, silhouette: Silhouette[DefaultEnv]) extends AbstractController(cc) with I18nSupport {
 
-  //parse TUI String
-  def boardString: String = Malefiz.controller.gameBoard.toString.replaceAll("( ?[0-9]+ )|(16)", "").replace(" ", "#").replace("###", " ").dropRight(1)
-
   //parse player Color
   def activePlayerColorString: String = Malefiz.controller.activePlayer.color.toString()
 
@@ -47,7 +44,7 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
   }
 
   def malefiz = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
-    Future.successful(Ok(views.html.malefiz(boardString, activePlayerColorString, diced, message, request.identity)))
+    Future.successful(Ok(views.html.malefiz(request.identity)))
   }
 
   def about = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
@@ -56,27 +53,27 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
 
   def newGame(n: Int) = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
     Malefiz.controller.newGame(n)
-    Future.successful(Ok(views.html.malefiz(boardString, activePlayerColorString, diced, message, request.identity)))
+    Future.successful(Ok(views.html.malefiz(request.identity)))
   }
 
   def takeInput(x: Int, y: Int) = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
     Malefiz.controller.takeInput(x, y)
-    Future.successful(Ok(views.html.malefiz(boardString, activePlayerColorString, diced, message, request.identity)))
+    Future.successful(Ok(views.html.malefiz(request.identity)))
   }
 
   def endTurn() = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
     Malefiz.controller.endTurn()
-    Future.successful(Ok(views.html.malefiz(boardString, activePlayerColorString, diced, message, request.identity)))
+    Future.successful(Ok(views.html.malefiz(request.identity)))
   }
 
   def undo() = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
     Malefiz.controller.undo()
-    Future.successful(Ok(views.html.malefiz(boardString, activePlayerColorString, diced, message, request.identity)))
+    Future.successful(Ok(views.html.malefiz(request.identity)))
   }
 
   def redo() = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
     Malefiz.controller.redo()
-    Future.successful(Ok(views.html.malefiz(boardString, activePlayerColorString, diced, message, request.identity)))
+    Future.successful(Ok(views.html.malefiz(request.identity)))
   }
 
   def gameJson() = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
