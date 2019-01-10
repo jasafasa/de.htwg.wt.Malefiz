@@ -7,6 +7,7 @@ function undo() {
             url: "undo",
 
             success: function (result) {
+                websocket.send('message');
                 updateGame()
             }
         }
@@ -20,6 +21,7 @@ function redo() {
             url: "redo",
 
             success: function (result) {
+                websocket.send('message');
                 updateGame()
             }
         }
@@ -33,6 +35,7 @@ function nextTurn() {
             url: "turn",
 
             success: function (result) {
+                websocket.send('message');
                 updateGame()
             }
         }
@@ -172,6 +175,7 @@ $(document).click(function (event) {
                 url: "touch/" + x + "/" + y,
 
                 success: function (result) {
+                    websocket.send('message');
                     updateGame()
                 }
             }
