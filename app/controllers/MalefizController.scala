@@ -157,7 +157,7 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
     }
 
     reactions += {
-      case de.htwg.se.malefiz.controller.State.Print => {
+      case de.htwg.se.malefiz.controller.State.ChoosePlayerStone => {
         print("testingrea\n")
         out ! "message"
       }
