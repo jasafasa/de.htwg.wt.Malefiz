@@ -1,14 +1,16 @@
 package controllers
 
-import akka.actor.{ Actor, ActorRef, ActorSystem, Identify, Props }
+import java.util.Observer
+
+import akka.actor.{Actor, ActorRef, ActorSystem, Identify, Props}
 import akka.stream.Materializer
 import com.mohiva.play.silhouette.api.Silhouette
 import com.mohiva.play.silhouette.api.actions.SecuredRequest
 import javax.inject._
 import play.api.mvc._
 import de.htwg.se.malefiz.Malefiz
-import de.htwg.se.malefiz.controller.{ ControllerInterface, State }
-import de.htwg.se.malefiz.model.gameboard.{ Field, GameBoardInterface, PlayerStone }
+import de.htwg.se.malefiz.controller.{ControllerInterface, State}
+import de.htwg.se.malefiz.model.gameboard.{Field, GameBoardInterface, PlayerStone}
 import org.webjars.play.WebJarsUtil
 import play.api.i18n.I18nSupport
 import play.api.libs.json._
@@ -146,26 +148,27 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
     }
   }
 
-  class MalefizWebSocketActor(out: ActorRef) extends Actor with Reactor {
+  class MalefizWebSocketActor(out: ActorRef) extends Actor with  Reactor {
+
     listenTo(Malefiz.controller)
     override def receive: Receive = {
       // at the moment msg is ignored and we sent always game board as json
       case _: String => {
         print("testingrec\n")
-        out ! "message"
+        out ! sendClient()
       }
     }
 
     reactions += {
-      case de.htwg.se.malefiz.controller.State.ChoosePlayerStone => {
+      case _ => {
         print("testingrea\n")
-        out ! "message"
+        out ! sendClient()
       }
     }
 
     def sendClient(): Unit = {
       println("Received event from Controller")
-      out ! "message"
+      out ! gameToJson(Malefiz.controller).toString()
     }
   }
 }
