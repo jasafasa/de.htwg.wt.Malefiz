@@ -196,17 +196,11 @@ function connectWebSocket() {
 }
 
 
-function init() {
-    connectWebSocket()
-}
-
-
-
-window.addEventListener("load", init, false);
 
 $(document).ready(function () {
     addButtons();
     updateGame(gameJson);
+    connectWebSocket()
 });
 
 Vue.component('board', {
