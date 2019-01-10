@@ -19,7 +19,6 @@ import scala.concurrent.Future
 import scala.swing.Reactor
 @Singleton
 class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUtil: WebJarsUtil, system: ActorSystem, assets: AssetsFinder, materializer: Materializer, silhouette: Silhouette[DefaultEnv]) extends AbstractController(cc) with I18nSupport {
-
   //parse TUI String
   def boardString: String = Malefiz.controller.gameBoard.toString.replaceAll("( ?[0-9]+ )|(16)", "").replace(" ", "#").replace("###", " ").dropRight(1)
 
@@ -152,6 +151,7 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
     override def receive: Receive = {
       // at the moment msg is ignored and we sent always game board as json
       case _: String => {
+        context.children.foreach(x=>print(x))
         print("testingrec\n")
         out ! "message"}
     }
