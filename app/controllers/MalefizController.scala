@@ -1,14 +1,14 @@
 package controllers
 
-import akka.actor.{Actor, ActorRef, ActorSystem, Identify, Props}
+import akka.actor.{ Actor, ActorRef, ActorSystem, Identify, Props }
 import akka.stream.Materializer
 import com.mohiva.play.silhouette.api.Silhouette
 import com.mohiva.play.silhouette.api.actions.SecuredRequest
 import javax.inject._
 import play.api.mvc._
 import de.htwg.se.malefiz.Malefiz
-import de.htwg.se.malefiz.controller.{ControllerInterface, State}
-import de.htwg.se.malefiz.model.gameboard.{Field, GameBoardInterface, PlayerStone}
+import de.htwg.se.malefiz.controller.{ ControllerInterface, State }
+import de.htwg.se.malefiz.model.gameboard.{ Field, GameBoardInterface, PlayerStone }
 import org.webjars.play.WebJarsUtil
 import play.api.i18n.I18nSupport
 import play.api.libs.json._
@@ -151,9 +151,10 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
     override def receive: Receive = {
       // at the moment msg is ignored and we sent always game board as json
       case _: String => {
-        context.children.foreach(x=>print(x))
+        Props.default.args.foreach(any => print(any))
         print("testingrec\n")
-        out ! "message"}
+        out ! "message"
+      }
     }
 
     reactions += {
