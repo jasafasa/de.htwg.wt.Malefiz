@@ -173,7 +173,7 @@ $(document).click(function (event) {
 
 function connectWebSocket() {
     websocket = new WebSocket(wsUri);
-    websocket.setTimeout()
+    websocket.setTimeout
     websocket.onopen = function(event) {
         console.log("Connected to Websocket");
     }
