@@ -180,6 +180,8 @@ function connectWebSocket() {
 
     websocket.onclose = function () {
         console.log('Connection with Websocket Closed!');
+        websocket = new WebSocket(wsUri);
+        connectWebSocket();
     };
 
     websocket.onerror = function (error) {
