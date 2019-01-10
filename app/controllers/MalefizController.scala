@@ -155,14 +155,14 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
       // at the moment msg is ignored and we sent always game board as json
       case _: String => {
         print("testingrec\n")
-        out ! sendClient()
+        sendClient()
       }
     }
 
     reactions += {
       case _ => {
         print("testingrea\n")
-        out ! sendClient()
+        sendClient()
       }
     }
 
