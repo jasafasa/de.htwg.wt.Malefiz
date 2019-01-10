@@ -206,6 +206,7 @@ window.addEventListener("load", init, false);
 
 $(document).ready(function () {
     addButtons();
+    updateGame(gameJson);
 });
 
 Vue.component('board', {
