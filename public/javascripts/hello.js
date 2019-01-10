@@ -205,7 +205,6 @@ function connectWebSocket() {
         if (typeof e.data === "string") {
             console.log('recieved')
             updateGame()
-            websocket.close()
         }
     };
 
