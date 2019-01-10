@@ -184,6 +184,8 @@ function connectWebSocket() {
 
     websocket.onerror = function (error) {
         console.log('Error in Websocket Occured: ' + error);
+        websocket = new WebSocket(wsUri);
+        connectWebSocket();
     };
 
     websocket.onmessage = function (e) {
