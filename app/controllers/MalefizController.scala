@@ -152,6 +152,7 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
     override def receive: Receive = {
       // at the moment msg is ignored and we sent always game board as json
       case _: String => {
+        context.children.seq.foreach(x=>println(x.toString()))
         print("testingrec\n")
         out ! "message"}
     }
@@ -163,7 +164,7 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
       }
     }
 
-    def sendJsonToClient(): Unit = {
+    def sendClient(): Unit = {
       println("Received event from Controller")
       out ! "message"
     }
