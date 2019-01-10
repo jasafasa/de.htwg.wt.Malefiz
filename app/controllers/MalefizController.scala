@@ -152,13 +152,13 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
     override def receive: Receive = {
       // at the moment msg is ignored and we sent always game board as json
       case _: String => {
-        print("testing")
+        print("testingrec\n")
         out ! "message"}
     }
 
     reactions += {
       case _ => {
-        print("testing")
+        print("testingrea\n")
         out ! "message"
       }
     }
