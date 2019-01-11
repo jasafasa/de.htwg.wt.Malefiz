@@ -1,12 +1,11 @@
+//let wsUri = "ws://localhost:9000/websocket";
+let wsUri = "ws://malefiz-web.herokuapp.com/websocket";
+
 function undo() {
     $.ajax(
         {
             type: 'GET',
-            url: "undo",
-
-            success: function (result) {
-                updateGame()
-            }
+            url: "undo"
         }
     )
 }
@@ -15,11 +14,7 @@ function redo() {
     $.ajax(
         {
             type: 'GET',
-            url: "redo",
-
-            success: function (result) {
-                updateGame()
-            }
+            url: "redo"
         }
     )
 }
@@ -29,10 +24,6 @@ function nextTurn() {
         {
             type: 'GET',
             url: "turn",
-
-            success: function (result) {
-                updateGame()
-            }
         }
     )
 }
@@ -41,44 +32,31 @@ function newGame(count) {
     $.ajax(
         {
             type: 'GET',
-            url: "new/" + count,
-
-            success: function (result) {
-                updateGame()
-            }
+            url: "new/" + count
         }
     )
 }
 
-function updateGame() {
-    $.ajax(
-        {
-            type: 'GET',
-            url: "gameJson",
-
-            success: function (result) {
-                boardVue.rows = result.rows;
-                gameStateVue.activePlayer = result.activePlayer;
-                gameStateVue.diced = result.diced;
-                gameStateVue.message = result.message;
-            }
-        }
-    )
+function updateGame(data) {
+    boardVue.rows = data.rows;
+    gameStateVue.activePlayer = data.activePlayer;
+    gameStateVue.diced = data.diced;
+    gameStateVue.message = data.message;
 }
 
 $(document).ready(function () {
-    updateGame();
+    connectWebSocket();
 });
 
 $(document).keypress(function (event) {
-    var keycode = (event.keyCode ? event.keyCode : event.which);
-    if (keycode == '110') {
+    let keyCode = (event.keyCode ? event.keyCode : event.which);
+    if (keyCode === 110) {
         nextTurn()
     }
-    if (keycode == '117') {
+    if (keyCode === 117) {
         undo()
     }
-    if (keycode == '114') {
+    if (keyCode === 114) {
         redo()
     }
 });
@@ -90,12 +68,11 @@ function openNewGameDropdown() {
 $(document).click(function (event) {
     //---close dropdown if opened----------
     if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
+        let dropDowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropDowns.length; i++) {
+            let openDropDown = dropDowns[i];
+            if (openDropDown.classList.contains('show')) {
+                openDropDown.classList.remove('show');
             }
         }
     }
@@ -111,11 +88,7 @@ let fieldVueComponent = Vue.component('field', {
             $.ajax(
                 {
                     type: 'GET',
-                    url: "touch/" + x + "/" + y,
-
-                    success: function (result) {
-                        updateGame()
-                    }
+                    url: "touch/" + x + "/" + y
                 }
             )
         }
@@ -163,3 +136,32 @@ let gameStateVue = new Vue({
         message: 'loading'
     }
 });
+
+function connectWebSocket() {
+    websocket = new WebSocket(wsUri);
+    websocket.setTimeout
+    websocket.onopen = function(event) {
+        console.log("Connected to Websocket");
+        websocket.send('message'); //update game
+    }
+
+    websocket.onclose = function () {
+        console.log('Connection with Websocket Closed!');
+        websocket = new WebSocket(wsUri);
+        connectWebSocket();
+    };
+
+    websocket.onerror = function (error) {
+        console.log('Error in Websocket Occured: ' + error);
+        websocket = new WebSocket(wsUri);
+        connectWebSocket();
+    };
+
+    websocket.onmessage = function (e) {
+        if (typeof e.data === "string") {
+            let data = JSON.parse(e.data);
+            updateGame(data);
+        }
+    };
+
+}
