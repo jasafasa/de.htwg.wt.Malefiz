@@ -1,5 +1,5 @@
 //let wsUri = "ws://localhost:9000/websocket";
-let wsUri = "ws://malefiz-web.herokuapp.com/websocket";
+let wsUri = "wss://malefiz-web.herokuapp.com/websocket";
 
 function undo() {
     $.ajax(
