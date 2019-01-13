@@ -38,10 +38,7 @@ function newGame(count) {
 }
 
 function updateGame(data) {
-    boardVue.rows = data.rows;
-    gameStateVue.activePlayer = data.activePlayer;
-    gameStateVue.diced = data.diced;
-    gameStateVue.message = data.message;
+    boardVue.game = data;
 }
 
 $(document).ready(function () {
@@ -96,12 +93,23 @@ let fieldVueComponent = Vue.component('field', {
 });
 
 let boardVue = new Vue({
-    el: '#board',
-    template: `<div class="board"><div v-for="row in rows" class="gameRow">
-        <field v-for="field in row.fields" v-bind:x="field.x" v-bind:y="field.y" v-bind:class="compFieldClasses(field)"></field>
-    </div></div>`,
+    el: '#game',
+    template: `<div class="game">
+        <div class="gameState">
+            <p class="alignleft">{{game.message}}</p>
+            <p class="alignright">
+                Player: <img v-bind:src="'/assets/images/player' + game.activePlayer + '.png'" width="30" height="30" class="d-inline-block align-top">
+                <img v-bind:src="'/assets/images/dice' + game.diced + '.png'" width="30" height="30" class="d-inline-block align-top">
+            </p>
+        </div>
+        <div class="board">
+            <div v-for="row in game.rows" class="gameRow">
+                <field v-for="field in row.fields" v-bind:x="field.x" v-bind:y="field.y" v-bind:class="compFieldClasses(field)"></field>
+            </div>
+        </div>
+    </div>`,
     data: {
-        rows: []
+        game: []
     },
     methods: {
         compFieldClasses: function (field) {
@@ -118,22 +126,6 @@ let boardVue = new Vue({
     },
     components: {
         'field': fieldVueComponent
-    }
-});
-
-let gameStateVue = new Vue({
-    el: '#gameState',
-    template: `<div>
-        <p>{{message}}</p>
-        <p>
-            Player:<img v-bind:src="'/assets/images/player' + activePlayer + '.png'" width="30" height="30" class="d-inline-block align-top">
-            Diced:<img v-bind:src="'/assets/images/dice' + diced + '.png'" width="30" height="30" class="d-inline-block align-top">
-        </p>
-    </div>`,
-    data: {
-        activePlayer: '1',
-        diced: '1',
-        message: 'loading'
     }
 });
 

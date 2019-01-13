@@ -1,7 +1,23 @@
+.gameState{
+    border-left: medium solid black;
+    border-right: medium solid black;
+    border-top: medium solid black;
+    background: orange;
+    padding: 0.5em;
+    min-width: 35.36em;
+    height: 3em;
+}
+
+.alignleft {
+    float: left;
+}
+.alignright {
+    float: right;
+}
+
 .board {
     background-color: orange;
     border: medium solid black;
-    border-top: medium solid black;
     min-height: 32em;
     padding: 0.5em;
 }
