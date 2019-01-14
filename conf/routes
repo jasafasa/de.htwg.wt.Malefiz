@@ -3,38 +3,38 @@
 # ~~~~
 
 # Home page
-GET         /                                controllers.ApplicationController.index
-GET         /signOut                         controllers.ApplicationController.signOut
-GET         /authenticate/:provider          controllers.SocialAuthController.authenticate(provider)
+GET         /                               controllers.ApplicationController.index
+GET         /signOut                        controllers.ApplicationController.signOut
+GET         /authenticate/:provider         controllers.SocialAuthController.authenticate(provider)
 
-GET         /signUp                          controllers.SignUpController.view
-POST        /signUp                          controllers.SignUpController.submit
+GET         /signUp                         controllers.SignUpController.view
+POST        /signUp                         controllers.SignUpController.submit
 
-GET         /signIn                          controllers.SignInController.view
-POST        /signIn                          controllers.SignInController.submit
+GET         /signIn                         controllers.SignInController.view
+POST        /signIn                         controllers.SignInController.submit
 
-GET         /password/forgot                 controllers.ForgotPasswordController.view
-POST        /password/forgot                 controllers.ForgotPasswordController.submit
-GET         /password/reset/:token           controllers.ResetPasswordController.view(token: java.util.UUID)
-POST        /password/reset/:token           controllers.ResetPasswordController.submit(token: java.util.UUID)
-GET         /password/change                 controllers.ChangePasswordController.view
-POST        /password/change                 controllers.ChangePasswordController.submit
+GET         /password/forgot                controllers.ForgotPasswordController.view
+POST        /password/forgot                controllers.ForgotPasswordController.submit
+GET         /password/reset/:token          controllers.ResetPasswordController.view(token: java.util.UUID)
+POST        /password/reset/:token          controllers.ResetPasswordController.submit(token: java.util.UUID)
+GET         /password/change                controllers.ChangePasswordController.view
+POST        /password/change                controllers.ChangePasswordController.submit
 
-GET         /account/email/:email            controllers.ActivateAccountController.send(email: String)
-GET         /account/activate/:token         controllers.ActivateAccountController.activate(token: java.util.UUID)
+GET         /account/email/:email           controllers.ActivateAccountController.send(email: String)
+GET         /account/activate/:token        controllers.ActivateAccountController.activate(token: java.util.UUID)
 
-GET        /malefiz                     controllers.MalefizController.malefiz
-GET        /about                 controllers.MalefizController.about
-GET        /new/$n<[2-4]>        controllers.MalefizController.newGame(n: Int)
-GET        /touch/:x/:y          controllers.MalefizController.takeInput(x: Int, y: Int)
-GET        /turn                 controllers.MalefizController.endTurn()
-GET        /undo                 controllers.MalefizController.undo()
-GET        /redo                 controllers.MalefizController.redo()
-GET        /gameJson             controllers.MalefizController.gameJson()
-GET        /websocket            controllers.MalefizController.socket
+GET         /malefiz                        controllers.MalefizController.malefiz
+GET         /instructions                   controllers.MalefizController.instructions
+GET         /new/$n<[2-4]>                  controllers.MalefizController.newGame(n: Int)
+GET         /touch/:x/:y                    controllers.MalefizController.takeInput(x: Int, y: Int)
+GET         /turn                           controllers.MalefizController.endTurn()
+GET         /undo                           controllers.MalefizController.undo()
+GET         /redo                           controllers.MalefizController.redo()
+GET         /gameJson                       controllers.MalefizController.gameJson()
+GET         /websocket                      controllers.MalefizController.socket
 
 
 # Map static resources from the /public folder to the /assets URL path
-GET        /assets/*file         controllers.Assets.versioned(path="/public", file: Asset)
+GET         /assets/*file                   controllers.Assets.versioned(path="/public", file: Asset)
 
-->          /webjars                         webjars.Routes
+->          /webjars                        webjars.Routes

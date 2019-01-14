@@ -47,7 +47,7 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
       case State.PlayerWon =>
         "Victory"
 
-      case _ => "next turn"
+      case _ => "Start a Game"
     }
   }
 
@@ -55,8 +55,8 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
     Future.successful(Ok(views.html.malefiz(request.identity)))
   }
 
-  def about: Action[AnyContent] = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
-    Future.successful(Ok(views.html.about(request.identity)))
+  def instructions: Action[AnyContent] = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
+    Future.successful(Ok(views.html.instructions(request.identity)))
   }
 
   def newGame(n: Int): Action[AnyContent] = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
