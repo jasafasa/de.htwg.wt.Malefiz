@@ -39,7 +39,7 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
         "Chose a Target Field"
 
       case State.BeforeEndOfTurn =>
-        "Press N to end your turn or U to undo"
+        "End turn"
 
       case _ => "next turn"
     }

@@ -41,14 +41,21 @@ function updateGame(data) {
     boardVue.game = data;
 }
 
+function resizeBoard() {
+    let newVal = $('.field').width();
+
+    $('.gameRow').each(function(){
+        $(this).height(newVal);
+    });
+}
+
 $(document).ready(function () {
+    resizeBoard();
     connectWebSocket();
 });
 
 $(window).resize(function () {
-    $('.gameRow').each(function(){
-        $(this).height($('.field').width());
-    });
+    resizeBoard();
 });
 
 $('.field').each(function(){
@@ -109,8 +116,8 @@ let boardVue = new Vue({
         <div class="gameState">
             <p class="alignleft">{{game.message}}</p>
             <p class="alignright">
-                Player: <img v-bind:src="'/assets/images/player' + game.activePlayer + '.png'" width="30" height="30" class="d-inline-block align-top">
-                <img v-bind:src="'/assets/images/dice' + game.diced + '.png'" width="30" height="30" class="d-inline-block align-top">
+                Player: <img v-bind:src="'/assets/images/player' + game.activePlayer + '.png'" class="stateImg">
+                <img v-bind:src="'/assets/images/dice' + game.diced + '.png'" class="stateImg">
             </p>
         </div>
         <div class="board">
