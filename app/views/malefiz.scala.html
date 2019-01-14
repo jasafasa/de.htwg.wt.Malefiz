@@ -4,26 +4,28 @@
 @import controllers.AssetsFinder
 @(user: models.User)(implicit request: RequestHeader, messages: Messages, webJarsUtil: WebJarsUtil, assets: AssetsFinder)
 
-    @main(messages("home.title"), Some(user)) {
-        <link rel="stylesheet" media="screen" href="@assets.path("styles/home.css")">
-        <link rel="shortcut icon" type="image/png" href="@assets.path("images/favicon.png")">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://unpkg.com/vue"></script>
-        <body>
-            <div class="dropdown">
-                <button onclick="openNewGameDropdown()" class="dropbtn blue">New Game</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a onclick="newGame(2)">2 Player</a>
-                    <a onclick="newGame(3)">3 Player</a>
-                    <a onclick="newGame(4)">4 Player</a>
+@main(messages("home.title"), Some(user)) {
+    <link rel="stylesheet" media="screen" href="@assets.path("styles/home.css")">
+    <link rel="shortcut icon" type="image/png" href="@assets.path("images/favicon.png")">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <body>
+        <div>
+            <div id="controls">
+                <div class="dropdown">
+                    <button onclick="openNewGameDropdown()" class="dropbtn blue">New Game</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a onclick="newGame(2)">2 Player</a>
+                        <a onclick="newGame(3)">3 Player</a>
+                        <a onclick="newGame(4)">4 Player</a>
+                    </div>
                 </div>
+                <button onclick="undo()" class="red">Undo</button>
+                <button onclick="redo()" class="red">Redo</button>
+                <button onclick="nextTurn()" class="blue">Next</button>
             </div>
-
-            <button onclick="undo()" class="red">Undo</button>
-            <button onclick="redo()" class="red">Redo</button>
-            <button onclick="nextTurn()" class="blue">Next</button>
-
             <div id="game"></div>
-        </body>
-        <script src="@assets.path("javascripts/hello.js")" type="text/javascript"></script>
-    }
+        </div>
+    </body>
+    <script src="@assets.path("javascripts/hello.js")" type="text/javascript"></script>
+}
