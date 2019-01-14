@@ -45,6 +45,17 @@ $(document).ready(function () {
     connectWebSocket();
 });
 
+$(window).resize(function () {
+    $('.gameRow').each(function(){
+        $(this).height($('.field').width());
+    });
+});
+
+$('.field').each(function(){
+    console.log('resize');
+    $(this).height($(this).width());
+});
+
 $(document).keypress(function (event) {
     let keyCode = (event.keyCode ? event.keyCode : event.which);
     if (keyCode === 110) {
