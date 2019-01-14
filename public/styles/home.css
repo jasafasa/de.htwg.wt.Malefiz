@@ -1,10 +1,15 @@
+.controls {
+    width: 37em;
+}
+
 .gameState{
     border-left: medium solid black;
     border-right: medium solid black;
     border-top: medium solid black;
     background: orange;
     padding: 0.5em;
-    min-width: 35.36em;
+    margin: auto;
+    width: 37em;
     height: 3em;
 }
 
@@ -18,8 +23,9 @@
 .board {
     background-color: orange;
     border: medium solid black;
-    min-height: 32em;
+    width: 37em;
     padding: 0.5em;
+    margin: auto;
 }
 
 .gameRow{
