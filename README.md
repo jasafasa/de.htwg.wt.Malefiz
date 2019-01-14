@@ -1,38 +1,47 @@
-Silhouette Seed Template
+The Malefiz project for the lecture web technologies
 =====================================
 
-The Silhouette Seed project is an Activator template which shows how [Silhouette](https://github.com/mohiva/play-silhouette) can be implemented in a Play Framework application. It's a starting point which can be extended to fit your needs.
+This is the WebView to the [Malefiz](https://github.com/TiHau/de.htwg.se.Malefiz) Game, for the login is used [Silhouette](https://github.com/mohiva/play-silhouette).
 
-## Example
+## Where can i play it?
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-(The "Build App" phase will take a few minutes)
-
-Or you can find a running example of this template under the following URL: https://play-silhouette-seed.herokuapp.com/
+You can find a running example of this WebView under the following URL: https://malefiz.herokuapp.com/
 
 ## Features
 
 * Sign Up
 * Sign In (Credentials)
-* Social Auth (Facebook, Google+, VK, Twitter, Xing, Yahoo)
-* Dependency Injection with Guice
-* Publishing Events
+* Social Auth (Google+)
 * Avatar service
 * Remember me functionality
 * Password reset/change functionality
-* Account activation functionality
-* Email sending and auth token cleanup
-* [Security headers](https://www.playframework.com/documentation/2.4.x/SecurityHeaders)
-* [CSRF Protection](https://www.playframework.com/documentation/2.4.x/ScalaCsrf)
+* Account activation functionality over mock(the logs)
+* Polymer(https://github.com/jasafasa/de.htwg.wt.Malefiz/tree/polymer)
+* Bootstrap
+* WebSockets
+* Vue
+* AJax & JQuery
+* Play Framework
 
-## Documentation
 
-Consult the [Silhouette documentation](http://silhouette.mohiva.com/docs) for more information. If you need help with the integration of Silhouette into your project, don't hesitate and ask questions in our [mailing list](https://groups.google.com/forum/#!forum/play-silhouette) or on [Stack Overflow](http://stackoverflow.com/questions/tagged/playframework).
+## Game specific Rest-API from the Play routes!
+| Method | URI | Description |
+| ---- | ----- | ----- |
+| GET | /malefiz | The malefiz game page. |
+| GET | /about | The about page. |
+| GET | /new/\[2-4]| starts a new game with set player count. |
+| GET | /touch/x/y | touches the field at x(0-16),y(0-15). |
+| GET | /turn | ends your turn. |
+| GET | /undo | undo what you done in your turn. |
+| GET | /redo | redo what you done in your turn. |
+| GET | /gameJson | returns the current game state as json. |
+| GET | /websocket | Initialize Websocket |
+| GET | /signOut | logs you out |
+| GET | /signUp | signUp page |
+| POST | /signUp | send added signUp data |
+| GET | /signIn | signIn page |
+| POST | /signIn | send added signIn data |
 
-## Activator
-
-See https://typesafe.com/activator/template/play-silhouette-seed
 
 # License
 
