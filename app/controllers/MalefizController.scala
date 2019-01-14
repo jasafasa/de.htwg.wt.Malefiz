@@ -44,6 +44,9 @@ class MalefizController @Inject() (cc: ControllerComponents)(implicit webJarsUti
       case State.SetPlayerCount =>
         "Start a Game"
 
+      case State.PlayerWon =>
+        "Victory"
+
       case _ => "next turn"
     }
   }
