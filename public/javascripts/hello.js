@@ -58,6 +58,10 @@ $(window).resize(function () {
     resizeBoard();
 });
 
+$('.game').ready(function () {
+    resizeBoard();
+});
+
 $('.field').each(function(){
     console.log('resize');
     $(this).height($(this).width());
