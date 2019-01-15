@@ -7,14 +7,14 @@
 @main("Malefiz - Instructions", Some(user)) {
     <link rel="stylesheet" media="screen" href="@assets.path("styles/instructions.css")">
 
-    <h2 class="text-center">How to Play</h2>
-    <h3 class="text-center">Explanation of the user interface</h3>
+    <h2 class="text-left text-md-center">How to Play</h2>
+    <h3 class="text-left text-md-center">Explanation of the user interface</h3>
 
     <div class="row mb-3">
-        <div class="col-6">
-            <img class="img-fluid" src="/assets/images/malefiz.gif">
+        <div class="col-6 col-md-6 order-md-1 my-auto">
+            <img class="exampleGif img-fluid" src="/assets/images/malefiz.gif">
         </div>
-        <div class="col-6 my-auto">
+        <div class="col-md-6 order-md-2">
             <p>At the top of the interface you can see a status message telling you which player's turn it is and what has been rolled.
                 To move one of your pieces select it by clicking on it. The background oft the fields you are able to move to will turn magenta.
                 With another click on one of them your move will be executed.<br>
