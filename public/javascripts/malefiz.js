@@ -50,8 +50,8 @@ function resizeBoard() {
 }
 
 $(document).ready(function () {
-    resizeBoard();
     connectWebSocket();
+    setTimeout(resizeBoard, 100);
 });
 
 $(window).resize(function () {
