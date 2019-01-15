@@ -117,7 +117,7 @@ let boardVue = new Vue({
         </div>
         <div class="board">
             <div v-for="row in game.rows" class="gameRow">
-                <field v-for="field in row.fields" v-bind:x="field.x" v-bind:y="field.y" v-bind:class="compFieldClasses(field)"></field>
+                <field v-for="field in row.fields" :key="field.x" v-bind:x="field.x" v-bind:y="field.y" v-bind:class="compFieldClasses(field)"></field>
             </div>
         </div>
     </div>`,
