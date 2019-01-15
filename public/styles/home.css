@@ -140,27 +140,6 @@ button.blue:active {
     box-shadow: inset 0 2px 5px #2370FE;
 }
 
-/* Orange button as seen on blogger.com*/
-button.orange {
-    color: white;
-    border: 1px solid #FB8F3D;
-    background: -webkit-linear-gradient(top, #FDA251, #FB8F3D);
-    background: -moz-linear-gradient(top, #FDA251, #FB8F3D);
-    background: -ms-linear-gradient(top, #FDA251, #FB8F3D);
-}
-
-button.orange:hover {
-    border: 1px solid #EB5200;
-    background: -webkit-linear-gradient(top, #FD924C, #F9760B);
-    background: -moz-linear-gradient(top, #FD924C, #F9760B);
-    background: -ms-linear-gradient(top, #FD924C, #F9760B);
-    box-shadow: 0 1px #EFEFEF;
-}
-
-button.orange:active {
-    box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
-}
-
 /* Red Google Button as seen on drive.google.com */
 button.red {
     background: -webkit-linear-gradient(top, #DD4B39, #D14836);
