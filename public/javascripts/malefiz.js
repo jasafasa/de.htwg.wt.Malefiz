@@ -44,7 +44,7 @@ function updateGame(data) {
 function resizeBoard() {
     let newVal = $('.field').width();
 
-    $('.gameRow').each(function(){
+    $('.gameRow').each(function () {
         $(this).height(newVal);
     });
 }
@@ -122,7 +122,11 @@ let boardVue = new Vue({
         </div>
     </div>`,
     data: {
-        game: []
+        game: {
+            activePlayer: 1,
+            diced: 1
+        }
+
     },
     methods: {
         compFieldClasses: function (field) {
@@ -145,19 +149,16 @@ let boardVue = new Vue({
 function connectWebSocket() {
     websocket = new WebSocket(wsUri);
     websocket.setTimeout
-    websocket.onopen = function(event) {
-        console.log("Connected to Websocket");
+    websocket.onopen = function (event) {
         websocket.send('message'); //update game
     }
 
     websocket.onclose = function () {
-        console.log('Connection with Websocket Closed!');
         websocket = new WebSocket(wsUri);
         connectWebSocket();
     };
 
     websocket.onerror = function (error) {
-        console.log('Error in Websocket Occured: ' + error);
         websocket = new WebSocket(wsUri);
         connectWebSocket();
     };
