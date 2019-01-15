@@ -48,6 +48,7 @@ p {
     padding: 0.5em;
     min-width: 320px;
     margin: auto;
+    text-align: center;
 }
 
 .gameRow{

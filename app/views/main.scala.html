@@ -27,7 +27,8 @@
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
 
-            <button class="navbar-toggler" style="border: none; padding: 0px" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <button class="navbar-toggler" style="border: none;
+                padding: 0px" data-toggle="collapse" data-target="#navbarSupportedContent">
                 <img src="/assets/images/favicon.png" height="40px">
             </button>
 
@@ -54,8 +55,7 @@
                 </ul>
             </div>
         </nav>
-
-        <div class="starter-template jumbotron text-center">
+        <div class="container">
             @request.flash.get("error").map { msg =>
                 <div class="col-md-6 col-md-offset-3 alert alert-danger">
                     <a href="#" class="close" data-dismiss="alert">&times;</a>
